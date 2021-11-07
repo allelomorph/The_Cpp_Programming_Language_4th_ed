@@ -33,7 +33,7 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[5\]
-(D2) Convert a small C program to C++. Modify the header files to declare all functions called and to declare the type of every argument. Where possible, replace #defines with enum, const, constexpr, or inline. Remove extern declarations from .cpp files and if necessary convert all function definitions to C++ function definition syntax. Replace calls of m`alloc()` and `free()` with new and delete. Remove unnecessary casts.\
+(D2) Convert a small C program to C++. Modify the header files to declare all functions called and to declare the type of every argument. Where possible, replace #defines with enum, const, constexpr, or inline. Remove extern declarations from .cpp files and if necessary convert all function definitions to C++ function definition syntax. Replace calls of `malloc()` and `free()` with new and delete. Remove unnecessary casts.\
 \
 File(s): [`_`](./)
 
@@ -67,7 +67,7 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[10\]
-(D2) Write an encryption program that reads from `cin` and writes the encoded characters to `cout`. You might use this simple encryption scheme: the encrypted form of a character `c` is cˆkey[i], where `key` is a string passed as a command-line argument. The program uses the characters in `key` in a cyclic manner until all the input has been read. Re-encrypting encoded text with the same key produces the original text. If no key (or a null string) is passed, then no encryption is done.\
+(D2) Write an encryption program that reads from `cin` and writes the encoded characters to `cout`. You might use this simple encryption scheme: the encrypted form of a character `c` is `cˆkey[i]`, where `key` is a string passed as a command-line argument. The program uses the characters in `key` in a cyclic manner until all the input has been read. Re-encrypting encoded text with the same key produces the original text. If no key (or a null string) is passed, then no encryption is done.\
 \
 File(s): [`_`](./)
 
@@ -77,7 +77,8 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[12\]
-(D2) Without using copy and paste, implement and test TEA (the Tiny Encryption Algorithm). D.J. Wheeler and R.M. Needham: *TEA, a tiny encryption algorithm*. Lecture Notes in Computer Science 1008: 363366. http://143.53.36.235:8080/tea.htm.\
+(D2) Without using copy and paste, implement and test TEA (the Tiny Encryption Algorithm). D.J. Wheeler and R.M. Needham: *TEA, a tiny encryption algorithm*. Lecture Notes in Computer Science 1008: 363366. http://143.53.36.235:8080/tea.htm.
+\
 \
 File(s): [`_`](./)
 
