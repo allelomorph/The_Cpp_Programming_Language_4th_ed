@@ -78,8 +78,3 @@ File(s): [`_`](./)
 \
 File(s): [`_`](./)\
 Compiled: `_`
-
----
-
-## Student
-* **Samuel Pomeroy** - [allelomorph](github.com/allelomorph)

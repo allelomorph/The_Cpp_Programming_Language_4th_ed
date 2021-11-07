@@ -109,8 +109,3 @@ No exercises.
 No exercises.
 
 ### [X.45 Compatibility](./45_Compatibility/)
-
----
-
-## Student
-* **Samuel Pomeroy** - [allelomorph](github.com/allelomorph)
