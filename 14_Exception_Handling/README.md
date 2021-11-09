@@ -14,7 +14,7 @@
 \
 File(s): [`_`](./)
 
-### \[\2]
+### \[2\]
 (D3) Write a function that searches a binary tree of nodes based on a `char*` field for a match. If a node containing `hello` is found, `find("hello")` will return a pointer to that node. Use an exception to indicate "not found."\
 \
 File(s): [`_`](./)
@@ -84,6 +84,7 @@ File(s): [`_`](./)
 \
 File(s): [`_`](./)
 
-### \[15\] (D2) Modify the calculator to use the functions from §X.14[14].\
+### \[15\]
+(D2) Modify the calculator to use the functions from §X.14\[14\].\
 \
 File(s): [`_`](./)

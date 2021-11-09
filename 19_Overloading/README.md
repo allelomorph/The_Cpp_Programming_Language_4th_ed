@@ -92,7 +92,8 @@ File(s): [`_`](./)
 \
 File(s): [`_`](./)
 
-### \[10] (D3) Define a class `Mat4` as a vector of four `Vec4`s. Define `operator[]` to return a `Vec4` for `Mat4`. Define the usual matrix operations for this type. Define a function doing Gaussian elimination for a `Mat4`.\
+### \[10\]
+(D3) Define a class `Mat4` as a vector of four `Vec4`s. Define `operator[]` to return a `Vec4` for `Mat4`. Define the usual matrix operations for this type. Define a function doing Gaussian elimination for a `Mat4`.\
 \
 File(s): [`_`](./)
 

@@ -24,12 +24,12 @@ Compiled: `_`
 ### \[3\]
 (D1.5) Find 5 different C++ constructs for which the meaning is undefined (§6.1). (D1.5) Find 5 different C++ constructs for which the meaning is implementation-defined (§6.1).\
 \
-File(s): [`_`](./)\
+File(s): [`_`](./)
 
 ### \[4\]
 (D1) Find 10 different examples of nonportable C++ code.\
 \
-File(s): [`_`](./)\
+File(s): [`_`](./)
 
 ### \[5\]
 (D1) For each declaration in §6.3, do the following: If the declaration is not a definition, write a definition for it. If the declaration is a definition, write a declaration for it that is not also a definition.\

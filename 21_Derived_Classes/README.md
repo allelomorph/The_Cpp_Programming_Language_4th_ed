@@ -14,7 +14,7 @@
 ```C++
 class Base {
 public:
-  virtual void iam() { cout << "Base\n"; }
+    virtual void iam() { cout << "Base\n"; }
 };
 ```
 Derive two classes from `Base`, and for each define `iam()` to write out the name of the class. Create objects of these classes and call `iam()` for them. Assign pointers to objects of the derived classes to `Base*` pointers and call `iam()` through those pointers.\
@@ -22,7 +22,7 @@ Derive two classes from `Base`, and for each define `iam()` to write out the nam
 File(s): [`_`](./)
 
 ### \[2\]
-(D3.5) Implement a simple graphics system using whatever graphics facilities are available on your system (if you don’t hav e a good graphics system or have no experience with one, you might consider a simple "huge bit ASCII implementation" where a point is a character position and you write by placing a suitable character, such as `*` in a position): `Window(n,m)` creates an area of size `n` times `m` on the screen. Points on the screen are addressed using (x,y) coordinates (Cartesian). A `Window w` has a current position `w.current()`. Initially, current is `Point(0,0)`. The current position can be set by `w.current(p)` where `p` is a `Point`. A `Point` is specified by a coordinate pair: `Point(x,y)`. A `Line` is specified by a pair of `Point`s: `Line(w.current(),p2);` class `Shape` is the common interface to `Dot`s, `Line`s, `Rectangle`s, `Circle`s, etc. A `Point` is not a `Shape`. A `Dot`, `Dot(p)` can be used to represent a `Point p` on the screen. A `Shape` is invisible unless `draw()`n.\
+(D3.5) Implement a simple graphics system using whatever graphics facilities are available on your system (if you don’t have a good graphics system or have no experience with one, you might consider a simple "huge bit ASCII implementation" where a point is a character position and you write by placing a suitable character, such as `*` in a position): `Window(n,m)` creates an area of size `n` times `m` on the screen. Points on the screen are addressed using (x,y) coordinates (Cartesian). A `Window w` has a current position `w.current()`. Initially, current is `Point(0,0)`. The current position can be set by `w.current(p)` where `p` is a `Point`. A `Point` is specified by a coordinate pair: `Point(x,y)`. A `Line` is specified by a pair of `Point`s: `Line(w.current(),p2);` class `Shape` is the common interface to `Dot`s, `Line`s, `Rectangle`s, `Circle`s, etc. A `Point` is not a `Shape`. A `Dot`, `Dot(p)` can be used to represent a `Point p` on the screen. A `Shape` is invisible unless `draw()`n.\
 \
 For example: `w.draw(Circle(w.current(),10))`. Every `Shape` has 9 contact points: `e` (east), `w` (west), `n` (north), `s` (south), `ne`, `nw`, `se`, `sw`, and `c` (center). For example, `Line(x.c(),y.nw())` creates a line from `x`'s center to `y`'s top left corner. After `draw()`ing a `Shape` the current position is the `Shape`'s `se()`. A `Rectangle` is specified by its bottom left and top right corner: `Rectangle(w.current(),Point(10,10))`. As a simple test, display a simple "child’s drawing of a house" with a roof, two windows, and a door.\
 \
@@ -71,6 +71,7 @@ public:
     char& operator[](int i) { return element[i]; }
     // ...
 };
+```
 Define `new_char_vec()` to allocate contiguous memory for a `Char_vec` object so that the elements can be indexed through element as shown. Under what circumstances does this trick cause serious problems?\
 \
 File(s): [`_`](./)

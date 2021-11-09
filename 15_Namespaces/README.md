@@ -14,6 +14,7 @@
 \
 File(s): [`_`](./)
 
-[2] (D2.5) Modify the desk calculator program into a module with a simple interface specifying calls and potential errors. Don’t expose implemetation details to users. Don’t make it easy for users to supply bad data. Don’t use any global using-directives. Keep a record of the mistakes you made. Suggest ways of avoiding such mistakes in the future.\
+### \[2\]
+(D2.5) Modify the desk calculator program into a module with a simple interface specifying calls and potential errors. Don’t expose implemetation details to users. Don’t make it easy for users to supply bad data. Don’t use any global using-directives. Keep a record of the mistakes you made. Suggest ways of avoiding such mistakes in the future.\
 \
 File(s): [`_`](./)

@@ -70,7 +70,8 @@ Define class `Expr` twice: once using a linked list of nodes as the representati
 \
 File(s): [`_`](./)
 
-### \[10\] (D2) Define a class `Char_queue` so that the public interface does not depend on the representation. Implement `Char_queue` (a) as a linked list and (b) as a vector. Do not worry about concurrency.\
+### \[10\]
+(D2) Define a class `Char_queue` so that the public interface does not depend on the representation. Implement `Char_queue` (a) as a linked list and (b) as a vector. Do not worry about concurrency.\
 \
 File(s): [`_`](./)
 

@@ -34,5 +34,7 @@ File(s): [`_`](./)
 \
 File(s): [`_`](./)
 
-### \[6\]\
-(D3) Implement a simple `Matrix` along the lines of the one in §17.5.2. Measure the performance of an addition of 1000-by-1000 matrices with and without move operations. If you did not have the option of adding move operations, what would you do?
+### \[6\]
+(D3) Implement a simple `Matrix` along the lines of the one in §17.5.2. Measure the performance of an addition of 1000-by-1000 matrices with and without move operations. If you did not have the option of adding move operations, what would you do?\
+\
+File(s): [`_`](./)
