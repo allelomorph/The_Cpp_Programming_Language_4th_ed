@@ -18,8 +18,7 @@ public:
 	double imag() const { return im; }
 	void imag(double d) { im = d; }
 
-	// `this` is the object on which a non-static member function is called...
-	// not sure why it returns a reference, but no reference is created...
+	// `this` is a pointer to the object on which a non-static member function is called
 	complex &operator+=(complex z) { re += z.re; im += z.im; return *this; }
 	complex &operator-=(complex z) { re -= z.re; im -= z.im; return *this; }
 }
