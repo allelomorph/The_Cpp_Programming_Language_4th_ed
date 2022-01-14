@@ -30,6 +30,17 @@ public:
 	Vector(const Vector &a);                       // copy constructor
 	Vector &operator=(const Vector &a);            // copy assignment
 
+	/*
+	 * Overloading the copy constructor/assignment functions with move
+	 * constructor/assignment functions that also take rvalue reference
+	 * parameters allows for discernment between a reference that can be
+	 * used as a lvalue or rvalue.
+	 *
+	 * See http://thbecker.net/articles/rvalue_references/section_01.html
+	 */
+	Vector(Vector &&a);                            // move constructor
+	Vector &operator=(Vector &&a);                 // move assignment
+
 	double &operator[](int i) { return elem[i]; }  // subscript variable
 //	const double &operator[](int i) const;         // subscript constant
 
@@ -45,8 +56,8 @@ public:
 Vector::Vector(const Vector &a)                 // copy constructor
 	:elem{new double[a.sz]},
 	 sz{a.sz} {
-	for (int i = 0; i != sz; ++i)
-		elem[i] = a.elem[i];
+		 for (int i = 0; i != sz; ++i)
+			 elem[i] = a.elem[i];
 }
 
 
@@ -60,6 +71,32 @@ Vector &Vector::operator=(const Vector &a) {    // copy assignment
 	sz = a.sz;
 	return *this;
 }
+
+
+Vector::Vector(Vector &&a)                      // move constructor
+	:elem{a.elem}, sz{a.sz} {
+		a.elem = nullptr;
+		a.sz = 0;
+}
+
+
+// No move assignment defintion in Stroustrup chapter 3, help here instead from:
+// https://docs.microsoft.com/en-us/cpp/cpp/move-constructors-and-move-assignment-operators-cpp?view=msvc-170
+// http://thbecker.net/articles/rvalue_references/section_01.html
+Vector &Vector::operator=(Vector &&a) {         // move assignment
+	if (this != &a) {  // avoids assigning to self
+		delete[] elem;
+
+		elem = a.elem;
+		sz = a.sz;
+
+		// Release the data pointer from the source object so that
+		// the destructor does not free the memory multiple times.
+		a.elem = nullptr;
+	        a.sz = 0;
+	}
+	return *this;
+}
 /////////// end file Vector.cpp
 
 
@@ -67,6 +104,19 @@ Vector &Vector::operator=(const Vector &a) {    // copy assignment
 #include <iostream>
 #include <array>
 // #include "Vector.h"
+
+
+Vector example_return() {
+	Vector v = {4, 5, 6};
+	return v;
+}
+
+
+void example_use(Vector v) {
+	// std::begin and std::end not in this scope, can't use range-for loop?
+	for (auto i = 0; i != v.size(); ++i)  // for (auto x : v)
+		std::cout << v[i] << std::endl;
+}
 
 
 int main() {
@@ -79,9 +129,14 @@ int main() {
 
 	std::array<Vector, 3> arr{v1, v2, v3};
 	for (auto x : arr) {
-	        // std::begin and std::end not in this scope, can't nest range-for loops?
-		for (auto y = 0; y != x.size(); ++y)  // for (auto y : x)
-			std::cout << x[y] << std::endl;
+	        // std::begin and std::end not in this scope, can't use range-for loop?
+		for (auto i = 0; i != x.size(); ++i)  // for (auto y : x)
+			std::cout << x[i] << std::endl;
 	}
+
+	Vector v4(3);
+
+	example_use(v4);                // argument is lvalue: calls example_use(Vector &)
+	example_use(example_return());  // argument is rvalue: calls example_use(Vector &&)
 }
 /////////// end file main.cpp
