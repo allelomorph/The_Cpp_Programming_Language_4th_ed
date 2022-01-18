@@ -18,26 +18,28 @@ void _print(T arg) {
 }
 
 
-/*
- * Stroustrup's example uses an overload with no parameters to serve as the
- * base case for the recursive call to va_print, once args is exhausted.
- */
+// Recursion is used as a model here for understanding, but really the compiler
+// creates a series of function calls out of the template at compile time.
+//
+// Stroustrup's example uses an overload with no parameters to serve as the
+// base case for the recursive call once args is exhausted.
+//
 // C-like in that it must be declared/defined before template to be called in it
 void va_print() {}
 
 
 template<typename T, typename ...Types>
 void va_print(T arg, Types ...args) {
-	_print(arg);       // use current arg
+	_print(arg);        // use current arg
 	va_print(args...);  // recurse, in next frame `arg` becomes first in `args`
 }
 
 
 // some examples show a base case that takes one param, not zero
-/*
- * perhaps in the previous example, in the second to last frame, Types is void,
- * which then causes the overloaded va_f1 to be called
- */
+//
+// perhaps in the previous example, in the second to last frame, Types is void,
+// which then causes the overloaded va_print to be called
+//
 // more in-depth with varaidic templates:
 // https://eli.thegreenplace.net/2014/variadic-templates-in-c/
 template<typename T>
