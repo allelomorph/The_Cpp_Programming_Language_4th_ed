@@ -1,0 +1,5 @@
+std::sort
+std::find
+std::find_if
+std::count
+std::replace

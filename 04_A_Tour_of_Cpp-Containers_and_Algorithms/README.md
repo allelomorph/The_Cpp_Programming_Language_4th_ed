@@ -12,22 +12,22 @@
 ### \[1\]
 When first reading this chapter, keep a record of information that was new or surprising to you. Later, use that list to focus your further studies.\
 \
-File(s): [`_`](./)
+File(s): N/A
 
 ### \[2\]
 (D1) List five standard-library containers.\
 \
-File(s): [`_`](./)
+File(s): [`X5_2`](./X5_2.txt)
 
 ### \[3\]
 (D1) List five standard-library algorithms.\
 \
-File(s): [`_`](./)
+File(s): [`X5_3`](./X5_3.txt)
 
 ### \[4\]
 (D1) List five standard-library headers.\
 \
-File(s): [`_`](./)
+File(s): [`X5_4`](./X5_4.txt)
 
 ### \[5\]
 (D1.5) Write a program that reads a name (a `string`) and an age (an `int`) from the standard input stream `cin`. Then output a message including the name and age to the standard output stream `cout`.\
