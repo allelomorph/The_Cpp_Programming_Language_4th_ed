@@ -38,7 +38,7 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-5_main.cc`
 ### \[6\]
 (D1.5) Redo §X.5[5], storing several (name, age) pairs in a class. Doing the reading and writing using your own `>>` and `<<` operators.\
 \
-File(s): [`X5-6_main.cc`](./X5-6_main.cc) [`X5-6_UserProfile.cc`](./X5-6_UserProfile.cc) [`X5-6_UserProfile.h`](./X5-6_UserProfile.h)\
+File(s): [`X5-6_main.cc`](./X5-6_main.cc) [`X5-6_UserProfile.cc`](./X5-6_UserProfile.cc) [`X5-6_UserProfile.hh`](./X5-6_UserProfile.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-6_main.cc X5-6_UserProfile.cc`
 
 ### \[7\]

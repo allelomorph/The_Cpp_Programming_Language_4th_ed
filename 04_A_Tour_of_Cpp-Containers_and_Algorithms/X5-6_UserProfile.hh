@@ -1,18 +1,38 @@
+// The debate on pragma once vs include guards seems to go back and forth, see:
+//   - https://stackoverflow.com/questions/1143936/pragma-once-vs-include-guards
+#ifndef X5_6_USERPROFILE_HH
+#define X5_6_USERPROFILE_HH
+
+
 #include <iostream>
 #include <string>
+#include <vector>
+#include <sstream>
 
 
 class UserProfile {
 private:
 	std::string _name;
 	int _age;
+
+	std::string &UniformStrSpacing(std::string &s) {
+		// split and rejoin to eliminate potential whitespace between tokens
+		std::istringstream iss(s);
+		std::vector<std::string> tokens;
+		for (std::string t; iss >> t; ) tokens.push_back(t);
+		std::ostringstream oss("");
+		std::vector<std::string>::iterator it = tokens.begin();
+	        oss << *it++;
+		for (; it != tokens.end(); ++it) oss << ' ' << *it;
+	        s = oss.str();
+		return s;
+	}
 public:
 	UserProfile() :_name{""}, _age{0} {}
-	UserProfile(std::string n) :_name{n}, _age{0} {}
-	UserProfile(std::string n, int a) :_name{n}, _age{a} {
+	UserProfile(std::string n) :_name{UniformStrSpacing(n)}, _age{0} {}
+	UserProfile(std::string n, int a) :_name{UniformStrSpacing(n)}, _age{a} {
 		if (a < 0)
-			throw std::out_of_range(
-				"UserProfile constructor age");
+			throw std::out_of_range("UserProfile constructor age");
 	}
 	~UserProfile() {}
 
@@ -27,8 +47,7 @@ public:
 	//   - https://codexpert.ro/blog/2014/10/17/c-gems-ref-qualifiers/
 	const std::string &name() const & { return _name; }
 	std::string name() && { return std::move(_name); }
-	// currently no trimmming of whitespace between name tokens
-	void name(std::string s) { _name = s; }
+	void name(std::string s) { _name = UniformStrSpacing(s); }
 
 	const int &age() const & { return _age; }
 	int age() && { return std::move(_age); }
@@ -54,3 +73,6 @@ public:
 //   - https://stackoverflow.com/questions/47083328/
 std::ostream &operator<<(std::ostream &os, const UserProfile &up);
 std::istream &operator>>(std::istream &is, UserProfile &up);
+
+
+#endif  // X5_6_USERPROFILE_HH

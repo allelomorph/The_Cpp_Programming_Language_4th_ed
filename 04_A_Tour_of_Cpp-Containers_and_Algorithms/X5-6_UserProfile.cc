@@ -1,8 +1,6 @@
-#include "X5-6_UserProfile.h"
+#include "X5-6_UserProfile.hh"
 #include <iostream>
 #include <string>
-#include <vector>
-#include <sstream>
 
 
 // mock JSON formatting
@@ -67,7 +65,6 @@ std::istream &operator>>(std::istream &is, UserProfile &up) {
 	}
 	name.erase(dblq_sz);
 
-	// no trimmming of whitespace between name tokens
 	// C++11 uses stoi, some users recommend C++17's from_chars, see:
 	//   - https://stackoverflow.com/a/55875943
 	int age = std::stoi(age_str);
@@ -75,16 +72,3 @@ std::istream &operator>>(std::istream &is, UserProfile &up) {
 
 	return is;
 }
-
-
-/*
-	// split and rejoin name string to reduce whitespace between tokens
-	std::istringstream name_iss(name);
-	std::vector<std::string> name_tokens;
-	for (std::string t; name_iss >> t; ) name_tokens.push_back(t);
-	std::ostringstream name_oss("");
-	std::vector<std::string>::iterator it = name_tokens.begin();
-	name_oss << *it++;
-	for (; it != name_tokens.end(); ++it) name_oss << ' ' << *it;
-	name = name_oss.str();
-*/
