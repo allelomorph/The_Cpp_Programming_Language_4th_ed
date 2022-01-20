@@ -26,66 +26,65 @@ std::ostream &operator<<(std::ostream &os, const UserProfile &up) {
 //   - Boost's boost::split
 //   - C++20's std::ranges::split_view
 std::istream &operator>>(std::istream &is, UserProfile &up) {
-	char c1;
-	// strip whitespace until first {
-	do {
-		is.get(c1);
-	} while (std::isspace(c1));
-	if (c1 == '{') {
-		// get '"name", age'
-		std::string up_str;
-		std::getline(is, up_str, '}');
-		// if (!is.good())
-		if (is.rdstate() == std::ios_base::failbit ||
-		    is.rdstate() == std::ios_base::eofbit)
-			return is;
-
-		// find first comma, which separates elements
-		std::string::size_type cma_sz = up_str.find_first_of(',');
-		if (cma_sz == std::string::npos) {
-			is.setstate(std::ios_base::failbit);
-			return is;
-		}
-
-		// raw element strings may contain extra whitespace
-		std::string name = up_str.substr(0, cma_sz);
-		std::string age_str = up_str.substr(cma_sz + 1, up_str.size());
-
-		// trim raw name before first "
-		// beware the difference between std::find and std::string::find
-		std::string::size_type dblq_sz = name.find_first_of('"');
-		if (dblq_sz == std::string::npos) {
-			is.setstate(std::ios_base::failbit);
-			return is;
-		}
-	        name.erase(0, dblq_sz + 1);
-
-		// trim raw name after second "
-	        dblq_sz = name.find_first_of('"');
-		if (dblq_sz == std::string::npos) {
-			is.setstate(std::ios_base::failbit);
-			return is;
-		}
-	        name.erase(dblq_sz);
-
-		// no trimmming of whitespace between name tokens
-		int age = std::stoi(age_str);
-		up = UserProfile{name, age};
-	} else {
+	is >> std::ws; // skip leading whitespace
+	char c;
+	if (!is.get(c) || c != '{') {
 		is.setstate(std::ios_base::failbit);
+		return is;
 	}
-        return is;
+
+	// get '"name", age'
+	std::string up_str;
+	std::getline(is, up_str, '}');
+	if (!is.good())
+		return is;
+
+	// find first comma, which separates elements
+	std::string::size_type cma_sz = up_str.find_first_of(',');
+	if (cma_sz == std::string::npos) {
+		is.setstate(std::ios_base::failbit);
+		return is;
+	}
+
+	// raw element strings may contain extra whitespace
+	std::string name = up_str.substr(0, cma_sz);
+	std::string age_str = up_str.substr(cma_sz + 1, up_str.size());
+
+	// trim raw name before first "
+	// beware the differences between std::find and std::string::find
+	std::string::size_type dblq_sz = name.find_first_of('"');
+	if (dblq_sz == std::string::npos) {
+		is.setstate(std::ios_base::failbit);
+		return is;
+	}
+	name.erase(0, dblq_sz + 1);
+
+	// trim raw name after second "
+	dblq_sz = name.find_first_of('"');
+	if (dblq_sz == std::string::npos) {
+		is.setstate(std::ios_base::failbit);
+		return is;
+	}
+	name.erase(dblq_sz);
+
+	// no trimmming of whitespace between name tokens
+	// C++11 uses stoi, some users recommend C++17's from_chars, see:
+	//   - https://stackoverflow.com/a/55875943
+	int age = std::stoi(age_str);
+	up = UserProfile{name, age};
+
+	return is;
 }
 
 
 /*
-		// split and rejoin name string to reduce whitespace between tokens
-                std::istringstream name_iss(name);
-                std::vector<std::string> name_tokens;
-                for (std::string t; name_iss >> t; ) name_tokens.push_back(t);
-                std::ostringstream name_oss("");
-                std::vector<std::string>::iterator it = name_tokens.begin();
-                name_oss << *it++;
-                for (; it != name_tokens.end(); ++it) name_oss << ' ' << *it;
-                name = name_oss.str();
+	// split and rejoin name string to reduce whitespace between tokens
+	std::istringstream name_iss(name);
+	std::vector<std::string> name_tokens;
+	for (std::string t; name_iss >> t; ) name_tokens.push_back(t);
+	std::ostringstream name_oss("");
+	std::vector<std::string>::iterator it = name_tokens.begin();
+	name_oss << *it++;
+	for (; it != name_tokens.end(); ++it) name_oss << ' ' << *it;
+	name = name_oss.str();
 */
