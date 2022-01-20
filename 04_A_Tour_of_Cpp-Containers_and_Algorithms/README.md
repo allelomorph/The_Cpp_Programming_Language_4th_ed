@@ -17,29 +17,29 @@ File(s): N/A
 ### \[2\]
 (D1) List five standard-library containers.\
 \
-File(s): [`X5_2`](./X5_2.txt)
+File(s): [`X5_2.txt`](./X5_2.txt)
 
 ### \[3\]
 (D1) List five standard-library algorithms.\
 \
-File(s): [`X5_3`](./X5_3.txt)
+File(s): [`X5_3.txt`](./X5_3.txt)
 
 ### \[4\]
 (D1) List five standard-library headers.\
 \
-File(s): [`X5_4`](./X5_4.txt)
+File(s): [`X5_4.txt`](./X5_4.txt)
 
 ### \[5\]
 (D1.5) Write a program that reads a name (a `string`) and an age (an `int`) from the standard input stream `cin`. Then output a message including the name and age to the standard output stream `cout`.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-5_main.cc`](./X5-5_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-5_main.cc`
 
 ### \[6\]
 (D1.5) Redo §X.5[5], storing several (name, age) pairs in a class. Doing the reading and writing using your own `>>` and `<<` operators.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-6_main.cc`](./X5-6_main.cc) [`X5-6_UserProfile.cc`](./X5-6_UserProfile.cc) [`X5-6_UserProfile.h`](./X5-6_UserProfile.h)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-6_main.cc X5-6_UserProfile.cc`
 
 ### \[7\]
 (D2) Initialize a `vector<int>` with the elements `5`, `9`, `−1`, `200`, and `0`. Print it. Sort it, and print it again.\
