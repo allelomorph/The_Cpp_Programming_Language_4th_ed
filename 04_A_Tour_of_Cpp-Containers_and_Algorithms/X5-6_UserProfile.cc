@@ -1,6 +1,7 @@
 #include "X5-6_UserProfile.hh"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 // mock JSON formatting
@@ -33,41 +34,37 @@ std::istream &operator>>(std::istream &is, UserProfile &up) {
 
 	// get '"name", age'
 	std::string up_str;
-	std::getline(is, up_str, '}');
+        getline(is, up_str, '}');
 	if (!is.good())
 		return is;
 
-	// find first comma, which separates elements
-	std::string::size_type cma_sz = up_str.find_first_of(',');
-	if (cma_sz == std::string::npos) {
+	// separate elements by first comma
+	std::istringstream up_iss(up_str);
+	std::vector<std::string> up_tokens;
+	std::string s;
+	while (getline(up_iss, s, ',')) up_tokens.push_back(s);
+        if (up_tokens.size() != 2) {
 		is.setstate(std::ios_base::failbit);
 		return is;
 	}
 
-	// raw element strings may contain extra whitespace
-	std::string name = up_str.substr(0, cma_sz);
-	std::string age_str = up_str.substr(cma_sz + 1, up_str.size());
-
-	// trim raw name before first "
-	// beware the differences between std::find and std::string::find
-	std::string::size_type dblq_sz = name.find_first_of('"');
-	if (dblq_sz == std::string::npos) {
+	// cull name string from between first and second " in first element
+	std::istringstream name_iss(up_tokens[0]);
+	name_iss >> std::ws;
+	std::string name;
+	if (!name_iss.get(c) || c != '"') {
 		is.setstate(std::ios_base::failbit);
 		return is;
 	}
-	name.erase(0, dblq_sz + 1);
-
-	// trim raw name after second "
-	dblq_sz = name.find_first_of('"');
-	if (dblq_sz == std::string::npos) {
+	getline(name_iss, name, '"');
+	if (!name_iss.good()) {
 		is.setstate(std::ios_base::failbit);
 		return is;
 	}
-	name.erase(dblq_sz);
 
 	// C++11 uses stoi, some users recommend C++17's from_chars, see:
 	//   - https://stackoverflow.com/a/55875943
-	int age = std::stoi(age_str);
+	int age = std::stoi(up_tokens[1]);
 	up = UserProfile{name, age};
 
 	return is;
