@@ -44,23 +44,23 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-6_main.cc X5-6_User
 ### \[7\]
 (D2) Initialize a `vector<int>` with the elements `5`, `9`, `−1`, `200`, and `0`. Print it. Sort it, and print it again.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-7_main.cc`](./X5-7_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-7_main.cc`
 
 ### \[8\]
 (D1) Repeat §X.5\[7\] with a `vector<string>` initialized with `"Kant"`, `"Plato"`, `"Aristotle"`, `"Kierkegard"`, and `"Hume"`.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-8_main.cc`](./X5-8_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-8_main.cc`
 
 ### \[9\]
 (D1) Open a file for writing (as an `ofstream`) and write a few hundred integers to it.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-9_main.cc`](./X5-9_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-9_main.cc`
 
 ### \[10\]
 (D1) Open the file of integers from §X.5\[9\] for reading (as an `ifstream`) and read it.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X5-10_main.cc`](./X5-10_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X5-10_main.cc`
