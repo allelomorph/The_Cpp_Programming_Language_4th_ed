@@ -15,13 +15,13 @@ When first reading this chapter, keep a record of information that was new or su
 ### \[2\]
 (D1.5) Write a program with two `thread`s: one that writes `hello` every second and one that writes `world!` every second.\
 \
-File(s): [`X6-2_main.cc`](./X6-2_main.cc) [`X6-2_TSafePrintPerSec.hh`](./X6-2_TSafePrintPerSec.hh)
+File(s): [`X6-2_main.cc`](./X6-2_main.cc) [`X6-2_TSafePrintPerSec.hh`](./X6-2_TSafePrintPerSec.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -pthread X6-2_main.cc`
 
 ### \[3\]
 (D2) Time a loop. Write out the time in milliseconds. Do this for the default setting of your compiler and for a setting using an optimizer (e.g., `−O2` or "release"). Be careful not to have the optimizer eliminate your whole loop as dead code because you did not use a result.\
 \
-File(s): [`X6-2_main.cc`](./X6-2_main.cc)\
+File(s): [`X6-3_main.cc`](./X6-3_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -pthread X6-3_main.cc`
 
 ### \[4\]
