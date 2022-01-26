@@ -27,8 +27,8 @@ Compiled: `_`
 ### \[4\]
 (D2) Repeat the histogram drawing example from §5.6.3 for a normal_distribution and 30 rows.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X6-4_main.cc`](./X6-4_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X6-4_main.cc`
 
 ### \[5\]
 (D1.5) Use a `regex` to find all decimal numbers in a file.\
