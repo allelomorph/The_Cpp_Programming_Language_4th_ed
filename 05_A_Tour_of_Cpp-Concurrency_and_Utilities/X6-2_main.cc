@@ -2,6 +2,11 @@
 #include <thread>
 
 
+// Using direct manipulation of threads and mutexes as in sections 5.3.1-5.3.3,
+//   as there is no need for the two printing threads to communicate. Otherwise,
+//   one could use the future/promise/packaged_task STL idioms in 5.3.5.x
+
+
 int main() {
 	TSafePrintPerSec tspps1, tspps2;
 
