@@ -33,5 +33,5 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X6-4_main.cc`
 ### \[5\]
 (D1.5) Use a `regex` to find all decimal numbers in a file.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X6-5_main.cc`](./X6-5_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X6-5_main.cc`
