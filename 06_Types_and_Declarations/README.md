@@ -12,14 +12,12 @@
 ### \[1\]
 (D2) Get the "Hello, world!" program (§2.2.1) to run. This is not an exercise in programming. It is an exercise to test your use of your edit-compile-link-execute tool chain.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
 
 ### \[2\]
 (D1) Write a program that prints `signed` if plain `char`s are signed on your implementation and `unsigned` otherwise.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X7-2_main.cc`](./X7-2_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-2_main.cc`
 
 ### \[3\]
 (D1.5) Find 5 different C++ constructs for which the meaning is undefined (§6.1). (D1.5) Find 5 different C++ constructs for which the meaning is implementation-defined (§6.1).\
@@ -45,8 +43,8 @@ Compiled: `_`
 ### \[7\]
 (D1.5) Write a program that prints out the letters `'a'..'z'` and the digits `'0'..'9'` and their integer values. Do the same for other printable characters. Do the same again but use hexadecimal notation.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X7-7_main.cc`](./X7-7_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-7_main.cc`
 
 ### \[8\]
 (D2) What, on your system, are the largest and the smallest values of the following types: `bool`, `char`, `short`, `int`, `long`, `long long`, `float`, `double`, `long double`, `unsigned` and `unsigned long`.\
