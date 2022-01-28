@@ -49,17 +49,20 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-7_main.cc`
 ### \[8\]
 (D2) What, on your system, are the largest and the smallest values of the following types: `bool`, `char`, `short`, `int`, `long`, `long long`, `float`, `double`, `long double`, `unsigned` and `unsigned long`.\
 \
-File(s): [`_`](./)
+File(s): [`X7-8_main.cc`](./X7-8_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-8_main.cc`
 
 ### \[9\]
 (D1) What are the sizes (in number of `char`s) of the types mentioned in §X.7\[8\]?\
 \
-File(s): [`_`](./)
+File(s): [`X7-8_main.cc`](./X7-8_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-8_main.cc`
 
 ### \[10\]
 (D1.5) What are the alignments (in number of `char`s) of the types mentioned in §X.7\[8\]?\
 \
-File(s): [`_`](./)
+File(s): [`X7-8_main.cc`](./X7-8_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-8_main.cc`
 
 ### \[11\]
 (D2) Draw a graph of the integer and fundamental types where a type points to another type if all values of the first can be represented as values of the second on every standards-conforming implementation. Draw the same graph for the types on your favorite implementation.\
