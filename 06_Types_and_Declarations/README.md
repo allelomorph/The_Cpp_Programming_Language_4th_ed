@@ -77,5 +77,5 @@ File(s): [`X7-12.txt`](./X7-12.txt)
 ### \[13\]
 (D1.5) Write a loop that prints out the values `4`, `5`, `9`, `17`, `12` without using an array or a `vector`.\
 \
-File(s): [`_`](./)\
-Compiled: `_`
+File(s): [`X7-13_main.cc`](./X7-13_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X7-13_main.cc`
