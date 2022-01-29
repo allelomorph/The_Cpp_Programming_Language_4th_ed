@@ -72,7 +72,7 @@ File(s): [`_`](./)
 ### \[12\]
 (D1) What is the longest local name you can use in a C++ program on your system? What is the longest external name you can use in a C++ program on your system? Are there any restrictions on the characters you can use in a name?\
 \
-File(s): [`_`](./)
+File(s): [`X7-12.txt`](./X7-12.txt)
 
 ### \[13\]
 (D1.5) Write a loop that prints out the values `4`, `5`, `9`, `17`, `12` without using an array or a `vector`.\

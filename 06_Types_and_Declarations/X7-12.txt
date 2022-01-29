@@ -1,0 +1,5 @@
+- https://stackoverflow.com/a/6007702
+In GNU C++ there is no practical limit, although the linker may impose limits on mangled identifier names.
+
+Annex B of the C++ standard does recommend limits on both local and external names of 1024 characters each:
+- https://eel.is/c++draft/implimits
