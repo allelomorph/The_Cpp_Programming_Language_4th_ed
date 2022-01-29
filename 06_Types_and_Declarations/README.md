@@ -12,6 +12,7 @@
 ### \[1\]
 (D2) Get the "Hello, world!" program (§2.2.1) to run. This is not an exercise in programming. It is an exercise to test your use of your edit-compile-link-execute tool chain.\
 \
+***( Task skipped, as it is redundant with all the work produced in recent chapters. )***
 
 ### \[2\]
 (D1) Write a program that prints `signed` if plain `char`s are signed on your implementation and `unsigned` otherwise.\
@@ -32,7 +33,7 @@ File(s): [`_`](./)
 ### \[5\]
 (D1) For each declaration in §6.3, do the following: If the declaration is not a definition, write a definition for it. If the declaration is a definition, write a declaration for it that is not also a definition.\
 \
-File(s): [`_`](./)
+File(s): [`X7-5.txt`](./X7-5.txt)
 
 ### \[6\]
 (D1.5) Write a program that prints the sizes of the fundamental types, a few pointer types, and a few enumerations of your choice. Use the `sizeof` operator.\

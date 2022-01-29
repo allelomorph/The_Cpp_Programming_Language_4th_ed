@@ -1,0 +1,58 @@
+// 6.3 examples:
+
+char ch;
+string s;
+auto count = 1;
+const double pi (3.1415926535897);
+extern int error_number;
+
+const char *name = "Njai";
+const char *season[] = {"spring", "summer", "fall", "winter"};
+vector<string> people { name, "Skarphedin", "Gunnar" };
+
+struct Date { int d, m, y };
+int day(Date *p) { return p->d; }
+double sqrt (double);
+template<typename T> T abs(T a) { return a < 0 ? -a : a; }
+
+constexpr int fac(int n) { return (n < 2) ? 1 : n * fac(n - 1) }
+constexpr double zz { ii * fac(7) }
+
+using Cmplx = std::complex<double>;
+struct User;
+enum class Beer { Carlsberg, Tuborg, Thor };
+namespace NS { int a; }
+
+
+// Changing every simple declaration to a definition, and every defintion to a
+//  simple declaration, when possible:
+
+char ch {c};
+string s {"string"};
+// cannot use auto if no value provided to interpret type:
+int count;
+const double pi;
+extern int error_number = 1;
+
+const char *name;
+// either array size must be specfied:
+const char *season[4];
+// or declared as a double pointer:
+const char **season;
+vector<string> people;
+
+struct Date;
+int day(Date *p);
+double sqrt (double d) { return std::sqrt(d); }
+// are there cases where one would declare template separate from its definition?
+template<typename T> T abs(T a);
+
+// likewise, it doesn't make much sense with constexpr:
+constexpr int fac(int n);  // ?
+constexpr double zz;  // ?
+
+// or aliases or namespaces:
+// using Cmplx = std::complex<double>;
+struct User { int id; int age; string name; };
+enum class Beer;
+//namespace NS { int a; }
