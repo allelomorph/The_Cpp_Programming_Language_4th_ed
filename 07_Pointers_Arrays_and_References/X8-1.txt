@@ -1,0 +1,26 @@
+// pointer to a character
+char *ch_ptr {nullptr};
+
+// array of 10 integers
+int int_arr[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+// reference to an array of 10 integers, see: https://stackoverflow.com/a/13081873
+//   (int &arr_ref[10] would be an array of 10 referneces to ints)
+int (&arr_ref)[10] {int_arr};
+
+// pointer to an array of character strings
+char **str_arr {nullptr};
+char *str_arr[4] {nullptr};
+
+// pointer to a pointer to a character
+char **char_ptr_ptr {nullptr};
+
+// constant integer
+const int c_i {1};
+
+// pointer to a constant integer
+const int *c_i_ptr {&i};
+int const *c_i_ptr2 {nullptr};
+
+// constant pointer to an integer
+int *const i_c_ptr {nullptr};

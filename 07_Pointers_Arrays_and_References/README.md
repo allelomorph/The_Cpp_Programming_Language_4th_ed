@@ -12,7 +12,7 @@
 ### \[1\]
 (D1) Write declarations for the following: a pointer to a character, an array of 10 integers, a reference to an array of 10 integers, a pointer to an array of character strings, a pointer to a pointer to a character, a constant integer, a pointer to a constant integer, and a constant pointer to an integer. Initialize each one.\
 \
-File(s): [`_`](./)
+File(s): [`X8-1.txt`](./X8-1.txt)
 
 ### \[2\]
 (D1.5) What, on your system, are the restrictions on the pointer types `char*`, `int*`, and `void*`? For example, may an `int*` have an odd value? Hint: alignment.\
