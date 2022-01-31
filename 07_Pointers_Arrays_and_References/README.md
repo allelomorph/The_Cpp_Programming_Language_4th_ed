@@ -11,7 +11,6 @@
 
 ### \[1\]
 (D1) Write declarations for the following: a pointer to a character, an array of 10 integers, a reference to an array of 10 integers, a pointer to an array of character strings, a pointer to a pointer to a character, a constant integer, a pointer to a constant integer, and a constant pointer to an integer. Initialize each one.\
-\
 File(s): [`X8-1.txt`](./X8-1.txt)
 
 ### \[2\]
@@ -22,7 +21,8 @@ File(s): [`_`](./)
 ### \[3\]
 (D1) Use an alias (`using`) to define the types `unsigned char`, `const unsigned char`, pointer to integer, pointer to pointer to `char`, pointer to array of `char`, array of 7 pointers to `int`, pointer to an array of 7 pointers to `int`, and array of 8 arrays of 7 pointers to `int`.\
 \
-File(s): [`_`](./)
+File(s): [`X8-3_main.cc`](./X8-3_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X7-7_main.cc`
 
 ### \[4\]
 (D1) Given two `char*`s pointing into an array, find and output the number of characters between the two pointed-to characters (zero if they point to the same element).\
