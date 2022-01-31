@@ -2,12 +2,13 @@
 #include <iomanip>
 #include <limits>
 #include <typeinfo>
+#include <cxxabi.h>  // abi::__cxa_demangle
 #include <string>
 #include <tuple>
 
 
 // see: - https://codeyarns.com/tech/2020-09-19-macro-to-check-c-compiler-and-version.html
-std::string CppVerString() {
+const std::string CppVerString() {
 	switch (__cplusplus) {
 	case 199711L: return "C++98";
 	case 201103L: return "C++11";
@@ -24,7 +25,7 @@ std::string CppVerString() {
 //   - https://dev.to/tenry/predefined-c-c-macros-43id
 // more complete list:
 //   - https://sourceforge.net/p/predef/wiki/Home/
-std::string CppImplementationString() {
+const std::string CppImplementationString() {
 	std::string impl;
 #ifdef __linux__
 	impl = "Linux and Linux-derived";
@@ -64,22 +65,22 @@ std::string CppImplementationString() {
 
 
 template<typename T>
-void PrintNemericTypeTraits(std::string t_name, T v) {
-	(void)v;
+void PrintNemericTypeTraits(std::ostream &os, T &v) {
 	// `sizeof(type)` as in C, but also `sizeof expr` is possible
-	std::cout << std::setw(13) << t_name <<
-		" - size: " << std::setw(2) << sizeof(T) <<
+        os << std::setw(20) << abi::__cxa_demangle(
+		typeid(v).name(), nullptr, nullptr, nullptr) << " - " <<
+		"size: " << std::setw(2) << sizeof(T) <<
 		" B   alignment: " << std::setw(2) << alignof(T) <<
 		" B   min: ";
-	if (typeid(T).hash_code() == typeid(char).hash_code()) {
-		std::cout << std::setw(20) << static_cast<int>(
+	if (typeid(v).hash_code() == typeid(char).hash_code()) {
+		os << std::setw(20) << static_cast<int>(
 			std::numeric_limits<T>::min()) <<
 			"   max: " <<
 			std::setw(20) << static_cast<int>(
 				std::numeric_limits<T>::max()) <<
 			std::endl;
 	} else {
-		std::cout << std::setw(20) << std::numeric_limits<T>::min() <<
+	        os << std::setw(20) << std::numeric_limits<T>::min() <<
 			"   max: " <<
 			std::setw(20) << std::numeric_limits<T>::max() <<
 			std::endl;
@@ -99,24 +100,23 @@ int main() {
 	std::cout << CppVerString() << " implementation: " <<
 		CppImplementationString() << '\n' << std::endl;
 
-	// Manually printing full type names, as opposed to typeid(obj).name()
-	//   which uses abbreviated names for basic types in GNU C++
-	// Also manually iterating through the tuple - it looks like as with
+	// Manually iterating through the tuple - it looks like as with
 	//   joining or splitting strings, it is harder in C++ than in Python.
 	//   Here, get<> can only take a const, so passing a variable i will not
 	//   work, and one needs to resort to templating; see:
 	//   - https://stackoverflow.com/a/6894436
+	//   - https://www.geeksforgeeks.org/how-to-iterate-over-the-elements-of-an-stdtuple-in-c/
 	// Although it apparently gets easier in C++17/20:
 	//   - https://stackoverflow.com/a/54641400
-	PrintNemericTypeTraits("bool",          std::get<0>(type_examples));
-	PrintNemericTypeTraits("char",          std::get<1>(type_examples));
-	PrintNemericTypeTraits("short",         std::get<2>(type_examples));
-	PrintNemericTypeTraits("int",           std::get<3>(type_examples));
-	PrintNemericTypeTraits("long",          std::get<4>(type_examples));
-	PrintNemericTypeTraits("long long",     std::get<5>(type_examples));
-	PrintNemericTypeTraits("float",         std::get<6>(type_examples));
-	PrintNemericTypeTraits("double",        std::get<7>(type_examples));
-	PrintNemericTypeTraits("long double",   std::get<8>(type_examples));
-	PrintNemericTypeTraits("unsigned",      std::get<9>(type_examples));
-	PrintNemericTypeTraits("unsigned long", std::get<10>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<0>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<1>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<2>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<3>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<4>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<5>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<6>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<7>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<8>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<9>(type_examples));
+	PrintNemericTypeTraits(std::cout, std::get<10>(type_examples));
 }
