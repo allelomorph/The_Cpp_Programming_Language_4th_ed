@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-// Honeestly not sure what Sroustrup is asking for here, is it that we use an
+// Honestly not sure what Stroustrup is asking for here, is it that we use an
 //   STL container other than a vector, such as a list? Or that we find a
 //   single equation that creates the series 4, 5, 9, 17, and 12 when iterated?
 // Neither seems relevant to the chapter's subject matter, so far as I can tell.
