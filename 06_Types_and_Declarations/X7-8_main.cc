@@ -3,6 +3,7 @@
 #include <limits>
 #include <typeinfo>
 #include <cxxabi.h>  // abi::__cxa_demangle
+#include <type_traits>
 #include <string>
 #include <tuple>
 
@@ -66,6 +67,14 @@ const std::string CppImplementationString() {
 
 template<typename T>
 void PrintNemericTypeTraits(std::ostream &os, T &v) {
+	// C++17: std::is_integral_v<T> == std::is_integral<T>::value
+	if (!std::is_integral<T>::value &&
+	    !std::is_floating_point<T>::value) {
+		std::cerr << abi::__cxa_demangle(typeid(v).name(), nullptr,
+						 nullptr, nullptr) <<
+			" is not a numeric type!" << std::endl;
+		return;
+	}
 	// `sizeof(type)` as in C, but also `sizeof expr` is possible
         os << std::setw(20) << abi::__cxa_demangle(
 		typeid(v).name(), nullptr, nullptr, nullptr) << " - " <<
