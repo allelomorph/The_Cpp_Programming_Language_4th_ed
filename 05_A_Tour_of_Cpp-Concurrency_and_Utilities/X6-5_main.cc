@@ -9,8 +9,8 @@
 
 
 double UniformRandDouble (float f_low, float f_high) {
-	UniformRandIntGen rnd_whole(std::round(f_low), std::round(f_high));
-	UniformRandIntGen rnd_dec(0, 1000);
+	UniformRandIntGen<> rnd_whole(std::round(f_low), std::round(f_high));
+	UniformRandIntGen<> rnd_dec(0, 1000);
 
 	int dec = rnd_dec();
 	int pow_10 = 0;
@@ -32,10 +32,10 @@ void CreateRegexTestFile(std::string filename) {
 	}
 
 	// '!' 33 to '~' 126
-	UniformRandIntGen rnd_char(33, 126);
-        UniformRandIntGen rnd_int(-100, 100);
-	UniformRandIntGen rnd_char_ct(1, 10);
-	UniformRandIntGen rnd_binary(0, 1);
+	UniformRandIntGen<> rnd_char(33, 126);
+	UniformRandIntGen<> rnd_int(-100, 100);
+	UniformRandIntGen<> rnd_char_ct(1, 10);
+	UniformRandIntGen<> rnd_binary(0, 1);
 
 	// 20 lines of random tokens interspersed with ints and floats
 	for (auto i = 0; i < 20; i++) {

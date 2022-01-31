@@ -4,10 +4,10 @@
 
 #include <random>
 
-
+template<class IntType = int>
 class UniformRandIntGen {
 public:
-        UniformRandIntGen(int low, int high) :rng{rd()}, dist{low, high} { }
+        UniformRandIntGen(IntType low, IntType high) :rng{rd()}, dist{low, high} { }
 	int operator()() { return dist(rng); }
 private:
 	// The default_random_engine (minstd_rand0 or
@@ -17,7 +17,7 @@ private:
 	//   Using Marsenne instead.
 	std::random_device rd;     // only used once to initialise (seed) engine
 	std::mt19937 rng;          // random-number engine used (Mersenne-Twister)
-	std::uniform_int_distribution<> dist;
+	std::uniform_int_distribution<IntType> dist;
 };
 
 
