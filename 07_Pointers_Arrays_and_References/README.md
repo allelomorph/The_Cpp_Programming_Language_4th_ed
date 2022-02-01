@@ -22,7 +22,7 @@ File(s): [`_`](./)
 (D1) Use an alias (`using`) to define the types `unsigned char`, `const unsigned char`, pointer to integer, pointer to pointer to `char`, pointer to array of `char`, array of 7 pointers to `int`, pointer to an array of 7 pointers to `int`, and array of 8 arrays of 7 pointers to `int`.\
 \
 File(s): [`X8-3_main.cc`](./X8-3_main.cc)
-Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X7-7_main.cc`
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X8-3_main.cc`
 
 ### \[4\]
 (D1) Given two `char*`s pointing into an array, find and output the number of characters between the two pointed-to characters (zero if they point to the same element).\
@@ -45,7 +45,8 @@ File(s): [`_`](./)
 ### \[7\]
 (D1) Write a function that swaps (exchanges the values of) two integers. Use `int*` as the argument type. Write another swap function using `int&` as the argument type.\
 \
-File(s): [`_`](./)
+File(s): [`X8-7_main.cc`](./X8-7_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-7_main.cc`
 
 ### \[8\]
 (D1.5) What is the size of the array `str` in the following example:
