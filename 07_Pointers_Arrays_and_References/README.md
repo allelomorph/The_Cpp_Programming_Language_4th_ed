@@ -55,12 +55,14 @@ char str[] = "a short string";
 ```
 What is the length of the string `"a short string"`?\
 \
-File(s): [`_`](./)
+File(s): [`X8-8.txt`](./X8-8.txt)
 
 ### \[9\]
 (D1) Define functions `f(char)`, `g(char&)`, and `h(const char&)`. Call them with the arguments `'a'`, `49`, `3300`, `c`, `uc`, and `sc`, where `c` is a `char`, `uc` is an `unsigned char`, and `sc` is a `signed char`. Which calls are legal? Which calls cause the compiler to introduce a temporary variable?\
 \
-File(s): [`_`](./)
+File(s): [`X8-9_main.cc`](./X8-9_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-9_main.cc`
+
 
 ### \[10\]
 (D1) Define an array of strings in which the strings contain the names of the months. Print those strings. Pass the array to a function that prints those strings.\
