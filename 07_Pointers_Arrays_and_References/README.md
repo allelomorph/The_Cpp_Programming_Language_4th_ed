@@ -67,7 +67,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-9_main.cc`
 ### \[10\]
 (D1) Define an array of strings in which the strings contain the names of the months. Print those strings. Pass the array to a function that prints those strings.\
 \
-File(s): [`_`](./)
+File(s): [`X8-10_main.cc`](./X8-10_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-10_main.cc`
 
 ### \[11\]
 (D2) Read a sequence of words from input. Use `Quit` as a word that terminates the input. Print the words in the order they were entered. Don’t print a word twice. Modify the program to sort the words before printing them.\
