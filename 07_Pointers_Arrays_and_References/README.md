@@ -73,11 +73,11 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-10_main.cc`
 ### \[11\]
 (D2) Read a sequence of words from input. Use `Quit` as a word that terminates the input. Print the words in the order they were entered. Don’t print a word twice. Modify the program to sort the words before printing them.\
 \
-File(s): [`_`](./)
+File(s): [`X8-11_main.cc`](./X8-11_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-11_main.cc`
 
 ### \[12\]
 (D2) Write a function that counts the number of occurrences of a pair of letters in a `string` and another that does the same in a zero-terminated array of `char` (a C-style string). For example, the pair `"ab"` appears twice in `"xabaacbaxabb"`.\
-\
 File(s): [`_`](./)
 
 ### \[13\]
