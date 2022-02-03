@@ -1,0 +1,17 @@
+// While the need for creating one's own singly- and doubly-linked list data
+// structures is not present in light of the STL std::forward_list<T> and
+// std::list<T>, when writing in C90 for previous student projects a common use
+// case for a self-referential struct was linked list nodes:
+
+
+tydedef struct SLL_node_s {
+	// data members of struct
+	struct SLL_node_s *next;   // pointer to next node, or nullptr
+} SLL_node;
+
+
+tydedef struct DLL_node_s {
+	// data members of struct
+	struct DLL_node_s *next;
+	struct DLL_node_s *prev;
+} DLL_node;

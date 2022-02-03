@@ -18,12 +18,13 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X9-1_main.cc`
 ### \[2\]
 (D1.5) Define a table of the names of months of the year and the number of days in each month. Write out that table. Do this twice; once using an array of `char` for the names and an array for the number of days and once using an array of structures, with each structure holding the name of a month and the number of days in it.\
 \
-File(s): [`_`](./)
+File(s): [`X9-2_main.cc`](./X9-2_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X9-2_main.cc`
 
 ### \[3\]
 (D1.5) Find an example where it would make sense to use a name in its own initializer.\
 \
-File(s): [`_`](./)
+File(s): [`X9-3.txt`](./X9-3.txt)
 
 ### \[4\]
 (D1.5) Define a `struct Date` to keep track of dates. Provide functions that read `Date`s from input, write `Date`s to output, and initialize a `Date` with a date.\
