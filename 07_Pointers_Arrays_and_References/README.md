@@ -78,7 +78,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-11_main.cc`
 
 ### \[12\]
 (D2) Write a function that counts the number of occurrences of a pair of letters in a `string` and another that does the same in a zero-terminated array of `char` (a C-style string). For example, the pair `"ab"` appears twice in `"xabaacbaxabb"`.\
-File(s): [`_`](./)
+File(s): [`X8-12_main.cc`](./X8-12_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-12_main.cc`
 
 ### \[13\]
 (D2) Run some tests to see if your compiler really generates equivalent code for iteration using pointers and iteration using indexing (§7.4.1). If different degrees of optimization can be requested, see if and how that affects the quality of the generated code.\
