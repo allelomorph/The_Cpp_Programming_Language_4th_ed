@@ -12,7 +12,8 @@
 ### \[1\]
 (D1) Define a `struct` with a member of each of the types `bool`, `char`, `int`, `long`, `double`, and `long double`. Order the members so as to get the largest size of the struct and the smallest size of the struct.\
 \
-File(s): [`_`](./)
+File(s): [`X9-1_main.cc`](./X9-1_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X9-1_main.cc`
 
 ### \[2\]
 (D1.5) Define a table of the names of months of the year and the number of days in each month. Write out that table. Do this twice; once using an array of `char` for the names and an array for the number of days and once using an array of structures, with each structure holding the name of a month and the number of days in it.\
