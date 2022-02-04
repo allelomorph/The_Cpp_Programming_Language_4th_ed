@@ -21,20 +21,20 @@ File(s): [`_`](./)
 ### \[3\]
 (D1) Use an alias (`using`) to define the types `unsigned char`, `const unsigned char`, pointer to integer, pointer to pointer to `char`, pointer to array of `char`, array of 7 pointers to `int`, pointer to an array of 7 pointers to `int`, and array of 8 arrays of 7 pointers to `int`.\
 \
-File(s): [`X8-3_main.cc`](./X8-3_main.cc)
+File(s): [`X8-3_main.cc`](./X8-3_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X8-3_main.cc`
 
 ### \[4\]
 (D1) Given two `char*`s pointing into an array, find and output the number of characters between the two pointed-to characters (zero if they point to the same element).\
 \
-File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)
+File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-4_main.cc`
 
 ### \[5\]
 (D1) Given two `int*`s pointing into an array, find and output the number of `int`s between the
 two pointed-to `int`s (zero if they point to the same element).\
 \
-File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)
+File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-5_main.cc`
 
 ### \[6\]
@@ -45,7 +45,7 @@ File(s): [`_`](./)
 ### \[7\]
 (D1) Write a function that swaps (exchanges the values of) two integers. Use `int*` as the argument type. Write another swap function using `int&` as the argument type.\
 \
-File(s): [`X8-7_main.cc`](./X8-7_main.cc)
+File(s): [`X8-7_main.cc`](./X8-7_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-7_main.cc`
 
 ### \[8\]
@@ -60,25 +60,26 @@ File(s): [`X8-8.txt`](./X8-8.txt)
 ### \[9\]
 (D1) Define functions `f(char)`, `g(char&)`, and `h(const char&)`. Call them with the arguments `'a'`, `49`, `3300`, `c`, `uc`, and `sc`, where `c` is a `char`, `uc` is an `unsigned char`, and `sc` is a `signed char`. Which calls are legal? Which calls cause the compiler to introduce a temporary variable?\
 \
-File(s): [`X8-9_main.cc`](./X8-9_main.cc)
+File(s): [`X8-9_main.cc`](./X8-9_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-9_main.cc`
 
 
 ### \[10\]
 (D1) Define an array of strings in which the strings contain the names of the months. Print those strings. Pass the array to a function that prints those strings.\
 \
-File(s): [`X8-10_main.cc`](./X8-10_main.cc)
+File(s): [`X8-10_main.cc`](./X8-10_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-10_main.cc`
 
 ### \[11\]
 (D2) Read a sequence of words from input. Use `Quit` as a word that terminates the input. Print the words in the order they were entered. Don’t print a word twice. Modify the program to sort the words before printing them.\
 \
-File(s): [`X8-11_main.cc`](./X8-11_main.cc)
+File(s): [`X8-11_main.cc`](./X8-11_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-11_main.cc`
 
 ### \[12\]
 (D2) Write a function that counts the number of occurrences of a pair of letters in a `string` and another that does the same in a zero-terminated array of `char` (a C-style string). For example, the pair `"ab"` appears twice in `"xabaacbaxabb"`.\
-File(s): [`X8-12_main.cc`](./X8-12_main.cc)
+\
+File(s): [`X8-12_main.cc`](./X8-12_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X8-12_main.cc`
 
 ### \[13\]
