@@ -27,14 +27,14 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X
 ### \[4\]
 (D1) Given two `char*`s pointing into an array, find and output the number of characters between the two pointed-to characters (zero if they point to the same element).\
 \
-File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)\
+File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`X6-5_UniformRandIntGen.hh`](../05_A_Tour_of_Cpp-Concurrency_and_Utilities/X6-5_UniformRandIntGen.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-4_main.cc`
 
 ### \[5\]
 (D1) Given two `int*`s pointing into an array, find and output the number of `int`s between the
 two pointed-to `int`s (zero if they point to the same element).\
 \
-File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`X6-5_UniformRandIntGen.hh`](./X6-5_UniformRandIntGen.hh)\
+File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`X6-5_UniformRandIntGen.hh`](../05_A_Tour_of_Cpp-Concurrency_and_Utilities/X6-5_UniformRandIntGen.hh)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-5_main.cc`
 
 ### \[6\]
