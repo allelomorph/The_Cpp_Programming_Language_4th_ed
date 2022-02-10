@@ -10,24 +10,24 @@
 namespace X9_1 {
 // alternating order of word and sub-word sized members forces the maximum
 //   amount of padding, as the word-sized members must begin at a word boundary
-struct Unaligned {
-	bool b;
-	long l;
-	char c;
-	double d;
-	int i;
-	long double ld;
-};
+	struct Unaligned {
+		bool b;
+		long l;
+		char c;
+		double d;
+		int i;
+		long double ld;
+	};
 
 // If member order prevents a member straddling a word boundary as much as
 //   possible, by grouping word-divisible members together, padding can be reduced
-struct Aligned {
-	long l;          // 8 bytes (1 word)
-	double d;        // 8 bytes
-	long double ld;  // 16 bytes
-	int i;           // 4 bytes
-	char c;          // 1 byte
-	bool b;          // 1 byte
+	struct Aligned {
+		long l;          // 8 bytes (1 word)
+		double d;        // 8 bytes
+		long double ld;  // 16 bytes
+		int i;           // 4 bytes
+		char c;          // 1 byte
+		bool b;          // 1 byte
 };
 // What is not clear is why sizeof(struct Aligned) == 48 and not 40, the next
 //   multiple of 8 after 38 (total of members) - is it padded to double word size?
