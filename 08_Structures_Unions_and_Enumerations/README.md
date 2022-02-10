@@ -29,7 +29,8 @@ File(s): [`X9-3.txt`](./X9-3.txt)
 ### \[4\]
 (D1.5) Define a `struct Date` to keep track of dates. Provide functions that read `Date`s from input, write `Date`s to output, and initialize a `Date` with a date.\
 \
-File(s): [`_`](./)
+File(s): [`X9-4_main.cc`](./X9-4_main.cc) [`X9-4_Date.hh`](./X9-4_Date.hh) [`X9-4_Date.cc`](./X9-4_Date.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X9-5_main.cc X9-4_Date.cc`
 
 ### \[5\]
 (D2) Implement an `enum` called `Season` with enumerators `spring`, `summer`, `autumn`, and `winter`. Define operators `++` and `−−` for Season. Define input (`>>`) and output (`<<`) operations for `Season`, providing string values. Provide a way to control the mapping between `Season` values and their string representations. For example, I might want the strings to reflect the Danish names for the seasons. For further study, see Chapter 39.\
