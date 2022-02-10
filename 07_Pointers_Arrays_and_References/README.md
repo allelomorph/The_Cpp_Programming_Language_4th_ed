@@ -16,7 +16,8 @@ File(s): [`X8-1.txt`](./X8-1.txt)
 ### \[2\]
 (D1.5) What, on your system, are the restrictions on the pointer types `char*`, `int*`, and `void*`? For example, may an `int*` have an odd value? Hint: alignment.\
 \
-File(s): [`_`](./)
+File(s): [`X8-2_main.cc`](./X8-2_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X8-2_main.cc`
 
 ### \[3\]
 (D1) Use an alias (`using`) to define the types `unsigned char`, `const unsigned char`, pointer to integer, pointer to pointer to `char`, pointer to array of `char`, array of 7 pointers to `int`, pointer to an array of 7 pointers to `int`, and array of 8 arrays of 7 pointers to `int`.\
