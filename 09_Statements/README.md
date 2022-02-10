@@ -18,7 +18,7 @@ for (i=0; i!=max_length; i++)
 ```
 Rewrite it to use a pointer as the controlled variable, that is, so that the test is of the form `*p=='?'`. Rewrite it to use a range-`for`.\
 \
-File(s): [`_`](./)
+File(s): [`X10-1.txt`](./X10-1.txt)
 
 ### \[2\]
 (D1) See how your compiler reacts to these errors:
@@ -57,7 +57,8 @@ void send(int* to, int* from, int count) // Duff’s device. Helpful comment del
 ```
 Why would anyone write something like that? No, this is not recommended as good style.\
 \
-File(s): [`_`](./)
+File(s): [`X10-3_main.cc`](./X10-3_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-3_main.cc`
 
 ### \[4\]
 (D2) Write a function `atoi(const char*)` that takes a C-style string containing digits and returns

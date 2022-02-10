@@ -1,0 +1,21 @@
+// Stroustrup example:
+for (i = 0; i != max_length; i++)
+	if (input_line[i] == '?')
+		quest_count++;
+
+// Using pointer arithmetic:
+//
+// char pointers have the builtin protection of a terminal null byte:
+for (auto c_ptr {input_line}; *c_ptr; c_ptr++)
+	if (*tmp == '?')
+		quest_count++;
+// One could generalize for all pointer types, although it means
+//   evaluating the distance between the pointers in every loop:
+for (auto tmp {input_line}; tmp - input_line != max_length; tmp++)
+	if (*tmp == '?')
+		quest_count++;
+
+// Using range-for:
+for (auto x& : input_line)
+	if (x == '?')
+		quest_count++;
