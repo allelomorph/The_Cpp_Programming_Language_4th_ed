@@ -66,7 +66,8 @@ the corresponding `int`. For example, `atoi("123")` is `123`. Modify `atoi()` to
 hexadecimal notation in addition to plain decimal numbers. Modify `atoi()` to handle the C++
 character constant notation.\
 \
-File(s): [`_`](./)
+File(s): [`X10-4_main.cc`](./X10-4_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-4_main.cc`
 
 ### \[5\]
 (D2) Write a function `itoa(int i, char b[])` that creates a string representation of `i` in `b` and returns `b`.\
