@@ -9,12 +9,12 @@
 //   feature is currently unimplemented.
 
 
-namespace X10_3 {
+namespace X10_4 {
 
 
 int atoi(const char *s) {
     if (s == nullptr)
-        throw std::invalid_argument("X10_3::atoi: null string");
+        throw std::invalid_argument("X10_4::atoi: null string");
 
     while (std::isspace(*s))
         ++s;
@@ -58,7 +58,7 @@ int atoi(const char *s) {
             }
         }
         if (i == 16)
-            throw std::invalid_argument("X10_3::atoi: mixed hexidecimal case");
+            throw std::invalid_argument("X10_4::atoi: mixed hexidecimal case");
     }
     return negative * res;
 }
@@ -67,67 +67,67 @@ int atoi(const char *s) {
 void atoiTestPrint(const char *s) {
     std::cout <<
         "std::atoi(\"" << s << "\"): " << std::atoi(s) <<
-        "       X10_3::atoi(\"" << s << "\"): " << X10_3::atoi(s) <<
+        "       X10_4::atoi(\"" << s << "\"): " << X10_4::atoi(s) <<
         std::endl;
 }
 
 
-}  // namespace X10_3
+}  // namespace X10_4
 
 
 int main() {
     try {
-        std::cout << "atoi(nullptr): " << X10_3::atoi(nullptr) << std::endl;
+        std::cout << "atoi(nullptr): " << X10_4::atoi(nullptr) << std::endl;
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
     try {
-        std::cout << "atoi(\"0xdF\"): " << X10_3::atoi("0xdF") << std::endl;
+        std::cout << "atoi(\"0xdF\"): " << X10_4::atoi("0xdF") << std::endl;
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl;
-    X10_3::atoiTestPrint("");
-    X10_3::atoiTestPrint("z");
-    X10_3::atoiTestPrint("-z");
-    X10_3::atoiTestPrint("0z");
-    X10_3::atoiTestPrint("0xz");
-    X10_3::atoiTestPrint("0Xz");
+    X10_4::atoiTestPrint("");
+    X10_4::atoiTestPrint("z");
+    X10_4::atoiTestPrint("-z");
+    X10_4::atoiTestPrint("0z");
+    X10_4::atoiTestPrint("0xz");
+    X10_4::atoiTestPrint("0Xz");
 
     std::cout << "\nstd::cout << [std::dec <<] 0: " << 0 << std::endl;
-    X10_3::atoiTestPrint("0");
-    X10_3::atoiTestPrint("-0");
-    X10_3::atoiTestPrint("    0");
-    X10_3::atoiTestPrint("   -0");
+    X10_4::atoiTestPrint("0");
+    X10_4::atoiTestPrint("-0");
+    X10_4::atoiTestPrint("    0");
+    X10_4::atoiTestPrint("   -0");
 
     std::cout << "\nstd::cout << [std::dec <<] 0x0: " << 0x0 << std::endl;
-    X10_3::atoiTestPrint("0x0");
-    X10_3::atoiTestPrint("-0x0");
-    X10_3::atoiTestPrint("    0x0");
-    X10_3::atoiTestPrint("   -0x0");
+    X10_4::atoiTestPrint("0x0");
+    X10_4::atoiTestPrint("-0x0");
+    X10_4::atoiTestPrint("    0x0");
+    X10_4::atoiTestPrint("   -0x0");
 
     std::cout << "\nstd::cout << [std::dec <<] 123: " << 123 << std::endl;
-    X10_3::atoiTestPrint("123");
-    X10_3::atoiTestPrint("-123");
-    X10_3::atoiTestPrint("    123");
-    X10_3::atoiTestPrint("   -123");
+    X10_4::atoiTestPrint("123");
+    X10_4::atoiTestPrint("-123");
+    X10_4::atoiTestPrint("    123");
+    X10_4::atoiTestPrint("   -123");
 
     std::cout << "\nstd::cout << [std::dec <<] 067: " << 067 << std::endl;
-    X10_3::atoiTestPrint("067");
-    X10_3::atoiTestPrint("-067");
-    X10_3::atoiTestPrint("    067");
-    X10_3::atoiTestPrint("   -067");
+    X10_4::atoiTestPrint("067");
+    X10_4::atoiTestPrint("-067");
+    X10_4::atoiTestPrint("    067");
+    X10_4::atoiTestPrint("   -067");
 
     std::cout << "\nstd::cout << [std::dec <<] 0xdf: " << 0xdf << std::endl;
-    X10_3::atoiTestPrint("0xdf");
-    X10_3::atoiTestPrint("-0xdf");
-    X10_3::atoiTestPrint("    0xdf");
-    X10_3::atoiTestPrint("   -0xdf");
+    X10_4::atoiTestPrint("0xdf");
+    X10_4::atoiTestPrint("-0xdf");
+    X10_4::atoiTestPrint("    0xdf");
+    X10_4::atoiTestPrint("   -0xdf");
 
     std::cout << "\nstd::cout << [std::dec <<] 0XDF: " << 0XDF << std::endl;
-    X10_3::atoiTestPrint("0XDF");
-    X10_3::atoiTestPrint("-0XDF");
-    X10_3::atoiTestPrint("    0XDF");
-    X10_3::atoiTestPrint("   -0XDF");
+    X10_4::atoiTestPrint("0XDF");
+    X10_4::atoiTestPrint("-0XDF");
+    X10_4::atoiTestPrint("    0XDF");
+    X10_4::atoiTestPrint("   -0XDF");
 }
