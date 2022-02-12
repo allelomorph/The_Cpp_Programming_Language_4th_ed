@@ -1,8 +1,16 @@
 #include <iostream>
 #include <cctype>     // isspace isdigit isxdigit
+#include <cstdlib>    // atoi
+
+
+// Not sure what Stroustrup is expecting when asking to "handle the C++ character
+//   constant notation." Templatize the function to take char/char16_t/char32_t/
+//   wchar_t parameters? Pass those values as a const char *? As a result, that
+//   feature is currently unimplemented.
 
 
 namespace X10_3 {
+
 
 int atoi(const char *s) {
     if (s == nullptr)
@@ -17,7 +25,7 @@ int atoi(const char *s) {
         ++s;
     }
     // std::atoi returns 0 for bad numeral strings, so not throwing exceptions
-    //  for "" or naked '-', "0x", or "0X"
+    //   for "", non-hexadecimal chars, and naked '-'/"0x"/"0X"
     bool cap_hex {false};
     int base {10};
     if (*s == '0') {
@@ -36,25 +44,33 @@ int atoi(const char *s) {
     else
         while (std::isdigit(*s)) ++s;
     --s;
-    char rep_ch[17] { "0123456789abcdef" };
+    char rep_ch[17] {"0123456789abcdef"};
     if (cap_hex) {
         for (auto i = 10; rep_ch[i]; ++i)
             rep_ch[i] -= ' ';
     }
     int res {0};
-    for (int pow {1}; s - rep_start >= 0; --s, pow *= base) {
-        int i {0};
-        for (; rep_ch[i]; ++i) {
+    for (int i, pow {1}; s - rep_start >= 0; --s, pow *= base) {
+        for (i = 0; rep_ch[i]; ++i) {
             if (*s == rep_ch[i]) {
                 res += i * pow;
                 break;
             }
         }
         if (i == 16)
-            throw std::invalid_argument("X10_3::atoi: mixed hex case");
+            throw std::invalid_argument("X10_3::atoi: mixed hexidecimal case");
     }
     return negative * res;
 }
+
+
+void atoiTestPrint(const char *s) {
+    std::cout <<
+        "std::atoi(\"" << s << "\"): " << std::atoi(s) <<
+        "       X10_3::atoi(\"" << s << "\"): " << X10_3::atoi(s) <<
+        std::endl;
+}
+
 
 }  // namespace X10_3
 
@@ -71,46 +87,47 @@ int main() {
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "atoi(\"\"): " << X10_3::atoi("") << std::endl;
-    std::cout << "atoi(\"z\"): " << X10_3::atoi("z") << std::endl;
-    std::cout << "atoi(\"-z\"): " << X10_3::atoi("-z") << std::endl;
-    std::cout << "atoi(\"0z\"): " << X10_3::atoi("0z") << std::endl;
-    std::cout << "atoi(\"0xz\"): " << X10_3::atoi("0xz") << std::endl;
-    std::cout << "atoi(\"0Xz\"): " << X10_3::atoi("0Xz") << std::endl;
+    std::cout << std::endl;
+    X10_3::atoiTestPrint("");
+    X10_3::atoiTestPrint("z");
+    X10_3::atoiTestPrint("-z");
+    X10_3::atoiTestPrint("0z");
+    X10_3::atoiTestPrint("0xz");
+    X10_3::atoiTestPrint("0Xz");
 
-    std::cout << "\nReference std::dec << 0: " << 0 << std::endl;
-    std::cout << X10_3::atoi("0") << std::endl;
-    std::cout << X10_3::atoi("-0") << std::endl;
-    std::cout << X10_3::atoi("    0") << std::endl;
-    std::cout << X10_3::atoi("   -0") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 0: " << 0 << std::endl;
+    X10_3::atoiTestPrint("0");
+    X10_3::atoiTestPrint("-0");
+    X10_3::atoiTestPrint("    0");
+    X10_3::atoiTestPrint("   -0");
 
-    std::cout << "\nReference std::dec << 0x0: " << 0x0 << std::endl;
-    std::cout << X10_3::atoi("0x0") << std::endl;
-    std::cout << X10_3::atoi("-0x0") << std::endl;
-    std::cout << X10_3::atoi("    0x0") << std::endl;
-    std::cout << X10_3::atoi("   -0x0") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 0x0: " << 0x0 << std::endl;
+    X10_3::atoiTestPrint("0x0");
+    X10_3::atoiTestPrint("-0x0");
+    X10_3::atoiTestPrint("    0x0");
+    X10_3::atoiTestPrint("   -0x0");
 
-    std::cout << "\nReference std::dec << 123: " << 123 << std::endl;
-    std::cout << X10_3::atoi("123") << std::endl;
-    std::cout << X10_3::atoi("-123") << std::endl;
-    std::cout << X10_3::atoi("    123") << std::endl;
-    std::cout << X10_3::atoi("   -123") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 123: " << 123 << std::endl;
+    X10_3::atoiTestPrint("123");
+    X10_3::atoiTestPrint("-123");
+    X10_3::atoiTestPrint("    123");
+    X10_3::atoiTestPrint("   -123");
 
-    std::cout << "\nReference std::dec << 067: " << 067 << std::endl;
-    std::cout << X10_3::atoi("067") << std::endl;
-    std::cout << X10_3::atoi("-067") << std::endl;
-    std::cout << X10_3::atoi("    067") << std::endl;
-    std::cout << X10_3::atoi("   -067") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 067: " << 067 << std::endl;
+    X10_3::atoiTestPrint("067");
+    X10_3::atoiTestPrint("-067");
+    X10_3::atoiTestPrint("    067");
+    X10_3::atoiTestPrint("   -067");
 
-    std::cout << "\nReference std::dec << 0xdf: " << 0xdf << std::endl;
-    std::cout << X10_3::atoi("0xdf") << std::endl;
-    std::cout << X10_3::atoi("-0xdf") << std::endl;
-    std::cout << X10_3::atoi("    0xdf") << std::endl;
-    std::cout << X10_3::atoi("   -0xdf") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 0xdf: " << 0xdf << std::endl;
+    X10_3::atoiTestPrint("0xdf");
+    X10_3::atoiTestPrint("-0xdf");
+    X10_3::atoiTestPrint("    0xdf");
+    X10_3::atoiTestPrint("   -0xdf");
 
-    std::cout << "\nReference std::dec << 0XDF: " << 0XDF << std::endl;
-    std::cout << X10_3::atoi("0XDF") << std::endl;
-    std::cout << X10_3::atoi("-0XDF") << std::endl;
-    std::cout << X10_3::atoi("    0XDF") << std::endl;
-    std::cout << X10_3::atoi("   -0XDF") << std::endl;
+    std::cout << "\nstd::cout << [std::dec <<] 0XDF: " << 0XDF << std::endl;
+    X10_3::atoiTestPrint("0XDF");
+    X10_3::atoiTestPrint("-0XDF");
+    X10_3::atoiTestPrint("    0XDF");
+    X10_3::atoiTestPrint("   -0XDF");
 }
