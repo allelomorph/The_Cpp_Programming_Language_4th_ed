@@ -84,7 +84,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-6_main.cc`
 ### \[7\]
 (D2.5) Write a program that strips comments out of a C++ program. That is, read from `cin`, remove both `//` comments and `/* */` comments, and write the result to `cout`. Do not worry about making the layout of the output look nice (that would be another, and much harder, exercise). Do not worry about incorrect programs. Beware of `//`, `/*`, and `*/` in comments, strings, and character constants.\
 \
-File(s): [`_`](./)
+File(s): [`X10-7.hh`](./X10-7.hh) [`X10-7_main.cc`](./X10-7_main.cc) [`X10-7_utils.cc`](./X10-7_utils.cc) [`X10-7_test_file.cc`](./X10-7_test_file.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-7_main.cc X10-7_utils.cc`
 
 ### \[8\]
 (D2) Look at some programs to get an idea of the variety of indentation, naming, and commenting styles actually used.\
