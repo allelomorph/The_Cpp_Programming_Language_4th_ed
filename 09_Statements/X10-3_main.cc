@@ -45,10 +45,10 @@ namespace X10_3 {
 
 	// Reading the linked sources, it looks as though the advantage here is
 	//   optimize for speed by reducing the amount of loop tests by having
-	//   a loop that tests once for 8 (could be any value) iterations of the
-	//   same instruction, and using the switch case to jump midway into the
-	//   loop to execute the remainder of iterations after dividing by the
-	//   amount they appear in the loop (8.)
+	//   a loop that tests once for 8 (could be any amount) iterations of
+        //   the same instruction, and using the switch case to jump midway
+        //   into the loop to execute the remainder of iterations after dividing
+        //   by the amount the statement is repeated.
 
 }  // namespace X10_3
 
