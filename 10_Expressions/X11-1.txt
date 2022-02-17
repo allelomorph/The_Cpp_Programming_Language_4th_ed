@@ -1,0 +1,62 @@
+a = b + c * d << 2 & 8
+a = (((b + (c * d)) << 2) & 8)
+1 multiplication (*)
+2 addition (+)
+3 bitwise left-shift (<<)
+4 bitwise AND (&)
+5 simple assignment (=)
+
+a & 077 != 3
+(a & 077) != 3
+1 bitwise AND (&)
+2 not equal (!=)
+
+a == b || a == c && c < 5
+(a == b) || ((a == c) && (c < 5))
+1 less than (<)
+2 equals (==)
+3 logical AND (&&)
+4 logical OR (||)
+
+c = x != 0
+c = (x != 0)
+1 not equal (!=)
+2 simple assignment (=)
+
+0 <= (i < 7)
+1 less than (<)
+2 less than or equal to (<=)
+
+f(1, 2) + 3
+(f(1, 2)) + 3
+1 function call
+2 addition (+)
+
+a = − 1 + + b −− − 5
+??? This Stroustrup example will not compile with g++ 9.3.0, even with no extra warnings
+1 post-decrement (--)
+2 subtraction (-)
+3 simple assignment (=)
+
+a = b == c ++
+a = (b == (c++))
+1 post-increment (++) (parsed first, but as it is post-, will be evaluated after statement it appears in)
+2 equals (==)
+3 simple assignment (=)
+
+a = b = c = 0
+a = (b = (c = 0))
+(unary and assignment operators are left-associative, all others right-associative)
+
+a[4][2] *= * b ? c : * d * 2
+(a[4])[2] *= ((* b) ? c : ((* d) * 2))
+1 subscripting ([ ])
+2 dereference (* )
+3 multiplication (*)
+4 conditional/ternary ( ? : )
+5 multiply and assign (*=)
+
+(a − b), (c = d)
+1 subtraction (-)
+2 simple assignment (=)
+3 sequencing comma (,)
