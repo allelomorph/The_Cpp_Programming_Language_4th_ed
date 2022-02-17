@@ -9,6 +9,14 @@
 
 namespace X10_7 {
 
+
+/**
+ * SettingsFromCommandLine - parses command line settings into a struct Settings
+ *
+ * @settings: reference to struct in main containing I/O settings
+ * @argc: argument count from main()
+ * @argv: argument array from main()
+ */
 int SettingsFromCommandLine(struct Settings &settings, int argc, char *argv[]) {
     if (argc < 1)
         throw std::invalid_argument("X10_7::SettingsFromCL: negative argc");
@@ -42,11 +50,17 @@ int SettingsFromCommandLine(struct Settings &settings, int argc, char *argv[]) {
 }
 
 
+/**
+ * RemoveCPPComments - reads line by line from an input stream, edits out
+ *   comments, and writes ressult to output stream
+ *
+ * @is: cin by default, could be ifstream
+ * @os: cout by default, could be ofstream
+ */
 void RemoveCPPComments(std::istream &is, std::ostream &os) {
     std::string line;
     std::string rstr_delim;
     TextState state { TextState::dflt };
-    bool mlc_exit {false};  // handles edge case of *//*
     while (std::getline(is, line)) {
         for (std::size_t i {0}; i < line.size(); ++i) {
             switch (line[i]) {
@@ -60,12 +74,11 @@ void RemoveCPPComments(std::istream &is, std::ostream &os) {
                         ++i;
                     }
                 }
-                break;
-            case '*':
-                if (state == TextState::mlc && line[i + 1] == '/') {
+                if (state == TextState::mlc &&
+                    i >= 1 && line[i - 1] == '*') {
                     state = TextState::dflt;
-                    ++i;
-                    mlc_exit = true;
+                    // Stroustrup's accepted use of goto: escaping nested control
+                    goto SkipChar;
                 }
                 break;
             case '\'':
@@ -78,33 +91,31 @@ void RemoveCPPComments(std::istream &is, std::ostream &os) {
                         state = TextState::dflt;
                 }
                 break;
-            case 'R':
-                if (state == TextState::dflt && line[i + 1] == '"') {
-                    std::size_t j {i + 2};
+            case '"':
+                if (state == TextState::dflt &&
+                    i >= 1 && line[i - 1] == 'R') {
+                    std::size_t j {i + 1};
                     // g++ raw string delimter max 16 chars
-                    for (; j - i < 18 && line[j] != '('; ++j)
+                    for (; j - i < 17 && line[j] != '('; ++j)
                         rstr_delim += line[j];
                     if (line[j] == '(') {
                         state = TextState::rstr;
-                    } else {  // ignore invalid code
+                    } else {  // ignore invalid code (delimiter too long)
                         rstr_delim = "";
                     }
-                }
-                break;
-            case '"':
-                if (state == TextState::rstr) {
-                    std::size_t j {i - 1};
-                    for (std::size_t k {
-                            rstr_delim.size() ? rstr_delim.size() - 1 : 0};
+                } else if (state == TextState::rstr) {
+                    std::size_t k {
+                        rstr_delim.size() ? rstr_delim.size() - 1 : 0};
+                    for (std::size_t j {i - 1};
                          line[j] != ')' && line[j] == rstr_delim[k];
                          --j, --k) {}
-                    if (line[j] == ')') {
+                    if (k == std::string::npos) { // (size_t)-1
                         state = TextState::dflt;
                         rstr_delim = "";
                     }
                 } else if (i == 0 ||
-                           (i == 1 && line[i - 1] != '\\') ||
-                           (line[i - 1] != '\\' || line[i - 2] == '\\')) {
+                    (i == 1 && line[i - 1] != '\\') ||
+                    (line[i - 1] != '\\' || line[i - 2] == '\\')) {
                     if (state == TextState::dflt)
                         state = TextState::str;
                     else if (state == TextState::str)
@@ -119,10 +130,10 @@ void RemoveCPPComments(std::istream &is, std::ostream &os) {
                 state = TextState::dflt;
                 break;
             }
-            if (state != TextState::mlc && !mlc_exit)
+            if (state != TextState::mlc)
                 os << line[i];
-            if (mlc_exit)
-                mlc_exit = false;
+        SkipChar:  // goto here avoids outputting trailing / of */
+            ;
         }
         if (state != TextState::mlc)
             os << std::endl;
@@ -134,6 +145,13 @@ void RemoveCPPComments(std::istream &is, std::ostream &os) {
 
 
 // C++17 introduces std::fileystem::copy_file to make this easier
+/**
+ * OverwriteFromTempFile - writes contents of input file to output file,
+ *   removes input file
+ *
+ * @i_filename: input file name
+ * @o_filename: output file name
+ */
 void OverwriteFromTempFile(std::string &i_filename, std::string &o_filename) {
     std::ifstream ifs {i_filename};
     if (!ifs.good() && errno) {
@@ -155,10 +173,12 @@ void OverwriteFromTempFile(std::string &i_filename, std::string &o_filename) {
     ifs.close();   // ofs implicitly closed
     std::remove(i_filename.c_str());
     if (errno) {
-        throw std::runtime_error("Failure to delete input file '" +
+        throw std::runtime_error("X10-7::OverwriteFromTempFile: "
+                                 "Failure to delete input file '" +
                                  i_filename +
                                  "': " + strerror(errno));
     }
 }
+
 
 }  // namespace X10_7
