@@ -30,12 +30,14 @@ File(s): [`X11-1.txt`](./X11-1.txt)
 ### \[2\]
 (D2) Read a sequence of possibly whitespace-separated (name,value) pairs, where the name is a single whitespace-separated word and the value is an integer or a floating-point value. Compute and print the sum and mean for each name and the sum and mean for all names. Hint: §10.2.8.\
 \
-File(s): [`_`](./)
+File(s): [`X11-2_main.cc`](./X11-2_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-2_main.cc`
 
 ### \[3\]
 (D1) Write a table of values for the bitwise logical operations (§11.1.1) for all possible combinations of `0` and `1` operands.\
 \
-File(s): [`_`](./)
+File(s): [`X11-2_main.cc`](./X11-3_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-3_main.cc`
 
 ### \[4\]
 (D2) Write 5 expressions for which the order of evaluation is undefined. Execute them to see what one or – preferably – more implementations do with them.\
