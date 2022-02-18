@@ -1,0 +1,29 @@
+*p++
+*(p++)
+1 post-increment (++) (parsed first, but will be evaluated after statement it appears in)
+2 dereference (* )
+
+*−−p
+*(−−p)
+1 pre-decrement (--)
+2 dereference (* )
+
+++a−−
+++(a−−)
+1 post-decrement (--) (parsed first, but will be evaluated after statement it appears in)
+1 pre-increment (++)
+
+(int*)p−>m
+(int*)(p−>m)
+1 member selection from pointer (->)
+2 cast (C-like) ((type) )
+
+*p.m
+*(p.m)
+1 member selection ( . )
+2 dereference (* )
+
+*a[i]
+*(a[i])
+1 subscripting ([ ])
+2 dereference (* )

@@ -61,7 +61,7 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -Wno-div-by-zero X11-5
 *a[i]
 ```
 \
-File(s): [`_`](./)
+File(s): [`X11-6.txt`](./X11-6.txt)
 
 ### \[7\]
 (D2) Implement and test these functions: `strlen()`, which returns the length of a C-style string; `strcpy()`, which copies a C-style string into another; and `strcmp()`, which compares two C-style strings. Consider what the argument types and return types ought to be. Then compare your functions with the standard library versions as declared in `<cstring>` (`<string.h>`) and as specified in §43.4.\
