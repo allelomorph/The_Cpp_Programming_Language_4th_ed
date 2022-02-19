@@ -76,12 +76,14 @@ File(s): [`_`](./)
 ### \[9\]
 (D2) Write a function `cat()` that takes two C-style string arguments and returns a string that is the concatenation of the arguments. Use `new` to find store for the result.\
 \
-File(s): [`_`](./)
+File(s): [`X11-9_main.cc`](./X11-9_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-9_main.cc`
 
 ### \[10\]
 (D2) Write a function `rev()` that takes a C-style string argument and reverses the characters in it. That is, after `rev(p)` the last character of `p` will be the first, etc.\
 \
-File(s): [`_`](./)
+File(s): [`X11-10_main.cc`](./X11-10_main.cc)
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-10_main.cc`
 
 ### \[11\]
 (D2) Type in the calculator example and get it to work. Do not "save time" by using an already entered text. You’ll learn most from finding and correcting "little silly errors."\
