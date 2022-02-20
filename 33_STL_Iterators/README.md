@@ -4,7 +4,7 @@
 - g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 
 ## Key
-- DX: Stroustrup difficulty rating (algorithmic: D1 = ~10 minutes, D2 = ~1 hour, D3 = ~1 day)
+- DX: Stroustrup difficulty rating (logorithmic: D1 = ~10 minutes, D2 = ~1 hour, D3 = ~1 day)
 
 ---
 
