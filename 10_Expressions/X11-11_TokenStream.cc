@@ -18,6 +18,8 @@ Token TokenStream::get() {
     do {  // skip whitespace other than '\n'
         if (!ip->get(c)) {
             ct.kind = Kind::end;
+            ct.string_value.clear();
+            ct.number_value = 0;
             return ct;
         }
     } while (c != '\n' && std::isspace(c));
@@ -48,6 +50,7 @@ Token TokenStream::get() {
     case '0': case '1': case '2': case '3': case '4':
     case '5': case '6': case '7': case '8': case '9':
     case '.': {  // braces limit scope of n_bgn/n_end
+        ct.kind = Kind::number;
         ct.string_value.clear();
         ip->putback(c);            // return first char of numeric representation to stream
 #ifdef DEBUG
@@ -66,21 +69,18 @@ Token TokenStream::get() {
                 n_bgn = std::ios_base::beg;
                 n_end = std::ios_base::end;
             }
-            // std::cout << "std::ios_base::beg: " << std::ios_base::beg <<
-            //     " std::ios_base::end: " << std::ios_base::end <<
-            //     " n_bgn: " << n_bgn << " n_end: " << n_end << std::endl;
             ip->seekg(n_bgn);          // return to beginning of representation
             while (ip->tellg() != n_end && ip->get(c))
                 ct.string_value += c;  // record representation
         }
 #endif
-        ct.kind = Kind::number;
         break;
     }
     default:  // name, name=, or error
         // Stroustrup's exmple ignores unrecognized tokens, need to return an
         //   error instead
         if (std::isalpha(c)) {
+            ct.kind = Kind::name;
             ct.string_value = c;
             while (ip->get(c)) {
                 if (std::isalnum(c)) {
@@ -90,7 +90,6 @@ Token TokenStream::get() {
                     break;
                 }
             }
-            ct.kind = Kind::name;
             ct.number_value = 0;
         }
         break;
