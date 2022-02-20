@@ -30,13 +30,13 @@ File(s): [`X11-1.txt`](./X11-1.txt)
 ### \[2\]
 (D2) Read a sequence of possibly whitespace-separated (name,value) pairs, where the name is a single whitespace-separated word and the value is an integer or a floating-point value. Compute and print the sum and mean for each name and the sum and mean for all names. Hint: §10.2.8.\
 \
-File(s): [`X11-2_main.cc`](./X11-2_main.cc)
+File(s): [`X11-2_main.cc`](./X11-2_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-2_main.cc`
 
 ### \[3\]
 (D1) Write a table of values for the bitwise logical operations (§11.1.1) for all possible combinations of `0` and `1` operands.\
 \
-File(s): [`X11-2_main.cc`](./X11-3_main.cc)
+File(s): [`X11-2_main.cc`](./X11-3_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-3_main.cc`
 
 ### \[4\]
@@ -47,7 +47,7 @@ File(s): [`_`](./)
 ### \[5\]
 (D1.5) What happens if you divide by zero on your system? What happens in case of overflow and underflow?\
 \
-File(s): [`X11-5_main.cc`](./X11-5_main.cc)
+File(s): [`X11-5_main.cc`](./X11-5_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -Wno-div-by-zero X11-5_main.cc`
 
 ### \[6\]
@@ -76,19 +76,20 @@ File(s): [`_`](./)
 ### \[9\]
 (D2) Write a function `cat()` that takes two C-style string arguments and returns a string that is the concatenation of the arguments. Use `new` to find store for the result.\
 \
-File(s): [`X11-9_main.cc`](./X11-9_main.cc)
+File(s): [`X11-9_main.cc`](./X11-9_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-9_main.cc`
 
 ### \[10\]
 (D2) Write a function `rev()` that takes a C-style string argument and reverses the characters in it. That is, after `rev(p)` the last character of `p` will be the first, etc.\
 \
-File(s): [`X11-10_main.cc`](./X11-10_main.cc)
+File(s): [`X11-10_main.cc`](./X11-10_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-10_main.cc`
 
 ### \[11\]
 (D2) Type in the calculator example and get it to work. Do not "save time" by using an already entered text. You’ll learn most from finding and correcting "little silly errors."\
 \
-File(s): [`_`](./)
+File(s): [`X11-11_main.cc`](./X11-11_main.cc) [`X11-11_TokenStream.cc`](./X11-11_TokenStream.cc) [`X11-11_TokenStream.hh`](./X11-11_TokenStream.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-11_main.cc X11-11_TokenStream.cc` (optionally with `-DDEBUG`)
 
 ### \[12\]
 (D2) Modify the calculator to report line numbers for errors.\
