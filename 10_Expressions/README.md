@@ -94,7 +94,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-11_main.cc X11-11_
 ### \[12\]
 (D2) Modify the calculator to report line numbers for errors.\
 \
-File(s): [`_`](./)
+File(s): [`X11-12_main.cc`](./X11-12_main.cc) [`X11-12_Calculator.cc`](./X11-12_Calculator.cc) [`X11-12_Calculator.hh`](./X11-12_Calculator.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X11-12_main.cc X11-12_Calculator.cc` (optionally with `-DDEBUG`)
 
 ### \[13\]
 (D3) Allow a user to define functions in the calculator. Hint: Define a function as a sequence of operations just as a user would have typed them. Such a sequence can be stored either as a character string or as a list of tokens. Then read and execute those operations when the function is called. If you want a user-defined function to take arguments, you will have to invent a notation for that.\
@@ -102,6 +103,6 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[14\]
-D1.5) Convert the desk calculator to use a symbol structure instead of using the static variables number_value and string_value.\
+(D1.5) Convert the desk calculator to use a symbol structure instead of using the static variables number_value and string_value.\
 \
 File(s): [`_`](./)
