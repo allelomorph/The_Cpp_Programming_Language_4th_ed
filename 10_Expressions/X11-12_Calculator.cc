@@ -45,31 +45,18 @@ Token TokenStream::get() {
         break;
     case '0': case '1': case '2': case '3': case '4':
     case '5': case '6': case '7': case '8': case '9':
-    case '.': {  // braces limit scope of n_bgn/n_end
+    case '.': {  // braces limit scope of repr_len
         ct.kind = Kind::number;
-        ct.string_value.clear();
-        ip->putback(c);            // return first char of numeric representation to stream
-#ifdef DEBUG
-        auto n_bgn {ip->tellg()};  // record position of first char in representation
-#endif
-        *ip >> ct.number_value;    // read number from stream
-#ifdef DEBUG
-        // using tellg with std::cin causes lseek ESPIPE failure, see:
-        //   - https://stackoverflow.com/a/53982136
-        // for cases where ip is a istringstream or ifstream, we can record the
-        //   number's string_value by backtracking in the stream
-        if (n_bgn != -1) {
-            auto n_end {ip->tellg()};  // record position after last char in representation
-            if (n_end == -1 && ip->eof()) {
-                ip->clear();  // clear eof
-                n_bgn = std::ios_base::beg;
-                n_end = std::ios_base::end;
-            }
-            ip->seekg(n_bgn);          // return to beginning of representation
-            while (ip->tellg() != n_end && ip->get(c))
-                ct.string_value += c;  // record representation
+        int repr_len {0};
+        for (ct.string_value.clear(); std::isdigit(c) || c == '.'; ++repr_len) {
+                ct.string_value += c;
+                if (!ip->get(c))
+                    break;
         }
-#endif
+        ip->putback(c);
+        for (auto i {repr_len - 1}; i >= 0; --i)
+            ip->putback(ct.string_value[i]);
+        *ip >> ct.number_value;    // read number from stream
         break;
     }
     default:  // name, name=, or error
