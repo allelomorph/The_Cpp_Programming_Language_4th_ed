@@ -7,6 +7,12 @@ Exercises for Bjarne Stroustrup: The C++ Programming Language (4th Edition), Add
 - Ubuntu 20.04.3 LTS
 - g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 
+## Repo File Structure
+* One directory per book chapter/set of exercises ("Xn")
+  * Files for a given exercise begin with `X`[Stroustrup section]`-`[task number]`_`
+  * `examples/`: some chapters have a subdirectory of annotated code examples from the text
+* `utils/` contains headers created during study that are frequently useful for testing
+
 ---
 
 ### X.2 The Structure of This Book
