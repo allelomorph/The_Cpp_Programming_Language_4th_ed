@@ -57,7 +57,7 @@ void send(int* to, int* from, int count) // Duff’s device. Helpful comment del
 ```
 Why would anyone write something like that? No, this is not recommended as good style.\
 \
-File(s): [`X10-3_main.cc`](./X10-3_main.cc)
+File(s): [`X10-3_main.cc`](./X10-3_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-3_main.cc`
 
 ### \[4\]
@@ -66,25 +66,25 @@ the corresponding `int`. For example, `atoi("123")` is `123`. Modify `atoi()` to
 hexadecimal notation in addition to plain decimal numbers. Modify `atoi()` to handle the C++
 character constant notation.\
 \
-File(s): [`X10-4_main.cc`](./X10-4_main.cc)
+File(s): [`X10-4_main.cc`](./X10-4_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-4_main.cc`
 
 ### \[5\]
 (D2) Write a function `itoa(int i, char b[])` that creates a string representation of `i` in `b` and returns `b`.\
 \
-File(s): [`X10-5_main.cc`](./X10-5_main.cc)
+File(s): [`X10-5_main.cc`](./X10-5_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-5_main.cc`
 
 ### \[6\]
 Modify `iota()` from the previous exercise to take an extra "string length" argument to make overflow less likely.\
 \
-File(s): [`X10-6_main.cc`](./X10-6_main.cc)
+File(s): [`X10-6_main.cc`](./X10-6_main.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-6_main.cc`
 
 ### \[7\]
 (D2.5) Write a program that strips comments out of a C++ program. That is, read from `cin`, remove both `//` comments and `/* */` comments, and write the result to `cout`. Do not worry about making the layout of the output look nice (that would be another, and much harder, exercise). Do not worry about incorrect programs. Beware of `//`, `/*`, and `*/` in comments, strings, and character constants.\
 \
-File(s): [`X10-7.hh`](./X10-7.hh) [`X10-7_main.cc`](./X10-7_main.cc) [`X10-7_utils.cc`](./X10-7_utils.cc) [`X10-7_test_file.cc`](./X10-7_test_file.cc)
+File(s): [`X10-7.hh`](./X10-7.hh) [`X10-7_main.cc`](./X10-7_main.cc) [`X10-7_utils.cc`](./X10-7_utils.cc) [`X10-7_test_file.cc`](./X10-7_test_file.cc)\
 Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-7_main.cc X10-7_utils.cc`
 
 ### \[8\]
