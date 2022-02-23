@@ -30,6 +30,6 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[5\]
-(D4) Find a program of a few thousand lines of code, preferably a program used for a real-world task, rather than an exercise solution. Count the number of casts (of all kinds). If not already done, classify all casts by turning them into named casts. Eliminate as many `static_casts`, `reinterpre_casts`, and `const_casts` as possible. This will most likely involve adding specific type conversion functions, templates, etc.\
+(D4) Find a program of a few thousand lines of code, preferably a program used for a real-world task, rather than an exercise solution. Count the number of casts (of all kinds). If not already done, classify all casts by turning them into named casts. Eliminate as many `static_casts`, `reinterpret_casts`, and `const_casts` as possible. This will most likely involve adding specific type conversion functions, templates, etc.\
 \
 File(s): [`_`](./)
