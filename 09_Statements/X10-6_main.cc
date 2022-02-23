@@ -6,13 +6,13 @@
 namespace X10_6 {
 
 
-void _atoiRecursion(int i, char *b, int pow_10, bool negative) {
+void _itoaRecursion(int i, char *b, int pow_10, bool negative) {
     if (pow_10 <= 0)
         return;
     int digit_base {i / pow_10};
     // must reverse sign digit by digit to include case of INT_MIN
     *b++ = negative ? (digit_base * -1) + '0' : digit_base + '0';
-    return _atoiRecursion(i % pow_10, b, pow_10 / 10, negative);
+    return _itoaRecursion(i % pow_10, b, pow_10 / 10, negative);
 }
 
 
@@ -37,7 +37,7 @@ void itoa(int i, char *b, std::size_t buf_sz) {
 
     if (neg)
         *b++ = '-';
-    return _atoiRecursion(i, b, pow_10, neg);
+    return _itoaRecursion(i, b, pow_10, neg);
 }
 
 
