@@ -27,7 +27,7 @@ Write a simple loop calculating a sum of elements (like `std::accumulate()`). Wr
 File(s): [`_`](./)
 
 ### \[4\]
-(D2.5) Define an `apply(v,f)` that applies a function `f` to each element of `v` assumed to be a `vector<Shape*>`. Test `apply()` with a a variety of functions, function objects, and lambdas. Note that by capturing variables from a lambda or storing values in a function object, you can call Shape functions that takes arguments without having to have `f()` take explicit arguments. Hint: there is a variety of ways of specifying `apply()`'s argument types; experiment.\
+(D2.5) Define an `apply(v,f)` that applies a function `f` to each element of `v` assumed to be a `vector<Shape*>`. Test `apply()` with a variety of functions, function objects, and lambdas. Note that by capturing variables from a lambda or storing values in a function object, you can call Shape functions that takes arguments without having to have `f()` take explicit arguments. Hint: there is a variety of ways of specifying `apply()`'s argument types; experiment.\
 \
 File(s): [`_`](./)
 
