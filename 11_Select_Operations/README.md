@@ -12,13 +12,14 @@
 ### \[1\]
 (D1) Copy all even non-zero elements of an `int[]` into a `vector<int>`. Use a pointer and `++` for the traversal.\
 \
-File(s): [`X12-1_main.cc`](./X12-1_main.cc)\
-Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-1_main.cc`
+File(s): [`X12-1_main.cc`](./X12-1_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-1_main.cc -I../utils`
 
 ### \[2\]
 (D2) Allocate so much memory using `new` that `bad_alloc` is thrown. Report how much memory was allocated and how much time it took. Do this twice: once not writing to the allocated memory and once writing to each element.\
 \
-File(s): [`_`](./)
+File(s): [`X12-2_main.cc`](./X12-2_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-2_main.cc -I../utils`
 
 ### \[3\]
 Write a simple loop calculating a sum of elements (like `std::accumulate()`). Write it in a dozen or more ways using `for`-statements, range-`for` statements, the `for_each()` algorithm, using indices, pointers, and iterators, using "plain code", function objects, and lambdas, and using different element types. See if you can find any performance differences between the different versions.\
