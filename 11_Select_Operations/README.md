@@ -29,7 +29,8 @@ File(s): [`_`](./)
 ### \[4\]
 (D2.5) Define an `apply(v,f)` that applies a function `f` to each element of `v` assumed to be a `vector<Shape*>`. Test `apply()` with a variety of functions, function objects, and lambdas. Note that by capturing variables from a lambda or storing values in a function object, you can call Shape functions that takes arguments without having to have `f()` take explicit arguments. Hint: there is a variety of ways of specifying `apply()`'s argument types; experiment.\
 \
-File(s): [`_`](./)
+File(s): [`X12-4_main.cc`](./X12-4_main.cc) [`X12-4_Shape.hh`](./X12-4_Shape.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-4_main.cc`
 
 ### \[5\]
 (D4) Find a program of a few thousand lines of code, preferably a program used for a real-world task, rather than an exercise solution. Count the number of casts (of all kinds). If not already done, classify all casts by turning them into named casts. Eliminate as many `static_casts`, `reinterpret_casts`, and `const_casts` as possible. This will most likely involve adding specific type conversion functions, templates, etc.\
