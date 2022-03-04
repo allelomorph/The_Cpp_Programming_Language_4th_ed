@@ -6,8 +6,8 @@
 namespace X12_4 {
 
 
-// Using rvalue to generalize a function pointer as parameter to another
-//   function, see:
+// Using rvalue reference to generalize a function pointer as parameter to
+//   another function, see:
 //   - https://stackoverflow.com/q/40844622/
 template<typename T, typename ...Types>
 void Apply(std::vector<Shape *> &v, T &&f, Types ...f_args) {
