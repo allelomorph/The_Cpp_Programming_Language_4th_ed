@@ -28,15 +28,15 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -Wno-unused-variable -std=c++11 X
 ### \[4\]
 (D1) Given two `char*`s pointing into an array, find and output the number of characters between the two pointed-to characters (zero if they point to the same element).\
 \
-File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`X6-5_UniformRandIntGen.hh`](../05_A_Tour_of_Cpp-Concurrency_and_Utilities/X6-5_UniformRandIntGen.hh)\
-Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-4_main.cc`
+File(s): [`X8-4_main.cc`](./X8-4_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../utils/ X8-4_main.cc`
 
 ### \[5\]
 (D1) Given two `int*`s pointing into an array, find and output the number of `int`s between the
 two pointed-to `int`s (zero if they point to the same element).\
 \
-File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`X6-5_UniformRandIntGen.hh`](../05_A_Tour_of_Cpp-Concurrency_and_Utilities/X6-5_UniformRandIntGen.hh)\
-Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../05_A_Tour_of_Cpp-Concurrency_and_Utilities/ X8-5_main.cc`
+File(s): [`X8-5_main.cc`](./X8-5_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I ../utils/ X8-5_main.cc`
 
 ### \[6\]
 (D2) What happens when you read and write beyond the bounds of an array. Do a few experiments involving a global array of `ints`, a local array of `int`s, an array of `int`s allocated by `new`, and a member array of `int`s. Try reading and writing just beyond the end and far beyond the end. Try the same for just before and far before the beginning. See what happens for different optimizer levels. Then try hard never to do out-of-range access by mistake.\

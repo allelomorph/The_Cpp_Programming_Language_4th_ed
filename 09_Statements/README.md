@@ -57,8 +57,8 @@ void send(int* to, int* from, int count) // Duff’s device. Helpful comment del
 ```
 Why would anyone write something like that? No, this is not recommended as good style.\
 \
-File(s): [`X10-3_main.cc`](./X10-3_main.cc)\
-Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X10-3_main.cc`
+File(s): [`X10-3_main.cc`](./X10-3_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 -I../utils/ X10-3_main.cc -Wno-implicit-fallthrough`
 
 ### \[4\]
 (D2) Write a function `atoi(const char*)` that takes a C-style string containing digits and returns

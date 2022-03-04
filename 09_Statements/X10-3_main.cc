@@ -1,8 +1,6 @@
 #include <iostream>
 #include <iomanip>
-
-
-#include "X6-5_UniformRandIntGen.hh"
+#include "UniformRandIntGen.hh"
 
 
 namespace X10_3 {

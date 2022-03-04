@@ -1,4 +1,4 @@
-#include "X6-5_UniformRandIntGen.hh"
+#include "UniformRandIntGen.hh"
 #include <iostream>
 #include <cstdlib>   // abs
 
