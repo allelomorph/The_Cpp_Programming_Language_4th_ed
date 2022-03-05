@@ -12,7 +12,7 @@
 namespace X12_3 {
 
 
-// Originally thought to generalize for both container and member types, but
+// Originally thought to generalize for both container and element types, but
 //   later settled on std::array for testing. Theoretically templates could be
 //   generalized to at least work with std::vector and std::string as well,
 //   given that they have both iterators and pointer access via `.data()`. An
@@ -103,13 +103,13 @@ void TestAccumulators(std::array<ElementType, Size> &arr,
                       unsigned int test_ct) {
     std::map<const std::string,
              ElementType (*)(std::array<ElementType, Size> &)> accums {
-        { "X12_3::Accum_0_Std_Accumulate",   X12_3::Accum_0_Std_Accumulate },
-        { "X12_3::Accum_1_For_Indicies",     X12_3::Accum_1_For_Indicies },
-        { "X12_3::Accum_2_For_Pointers",     X12_3::Accum_2_For_Pointers },
-        { "X12_3::Accum_3_For_Iterators",    X12_3::Accum_3_For_Iterators },
-        { "X12_3::Accum_4_Range_For",        X12_3::Accum_4_Range_For },
-        { "X12_3::Accum_5_For_Each_FuncObj", X12_3::Accum_5_For_Each_FuncObj },
-        { "X12_3::Accum_6_For_Each_Lambda",  X12_3::Accum_6_For_Each_Lambda }
+        { "X12_3::Accum_0_Std_Accumulate",   Accum_0_Std_Accumulate },
+        { "X12_3::Accum_1_For_Indicies",     Accum_1_For_Indicies },
+        { "X12_3::Accum_2_For_Pointers",     Accum_2_For_Pointers },
+        { "X12_3::Accum_3_For_Iterators",    Accum_3_For_Iterators },
+        { "X12_3::Accum_4_Range_For",        Accum_4_Range_For },
+        { "X12_3::Accum_5_For_Each_FuncObj", Accum_5_For_Each_FuncObj },
+        { "X12_3::Accum_6_For_Each_Lambda",  Accum_6_For_Each_Lambda }
     };
 
     for (auto &pair : accums) {
@@ -136,7 +136,7 @@ void TestAccumulators(std::array<ElementType, Size> &arr,
 
 int main() {
     constexpr unsigned int arr_sz  {100};
-    constexpr unsigned int test_ct {20};
+    constexpr unsigned int test_ct {50};
 
     std::array<int, arr_sz> int_arr;
     for (unsigned int i {0}; i < arr_sz; ++i)
