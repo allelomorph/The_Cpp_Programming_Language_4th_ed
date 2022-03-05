@@ -24,7 +24,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-2_main.cc -I../uti
 ### \[3\]
 Write a simple loop calculating a sum of elements (like `std::accumulate()`). Write it in a dozen or more ways using `for`-statements, range-`for` statements, the `for_each()` algorithm, using indices, pointers, and iterators, using "plain code", function objects, and lambdas, and using different element types. See if you can find any performance differences between the different versions.\
 \
-File(s): [`_`](./)
+File(s): [`X12-3_main.cc`](./X12-3_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X12-3_main.cc`
 
 ### \[4\]
 (D2.5) Define an `apply(v,f)` that applies a function `f` to each element of `v` assumed to be a `vector<Shape*>`. Test `apply()` with a variety of functions, function objects, and lambdas. Note that by capturing variables from a lambda or storing values in a function object, you can call Shape functions that takes arguments without having to have `f()` take explicit arguments. Hint: there is a variety of ways of specifying `apply()`'s argument types; experiment.\
