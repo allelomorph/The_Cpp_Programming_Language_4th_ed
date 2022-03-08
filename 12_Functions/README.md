@@ -12,7 +12,8 @@
 ### \[1\]
 (D1) Write declarations for the following: a function taking arguments of type pointer to character and reference to integer and returning no value; a pointer to such a function; a function taking such a pointer as an argument; and a function returning such a pointer. Write the definition of a function that takes such a pointer as an argument and returns its argument as the return value. Hint: Use a type alias (`using`).\
 \
-File(s): [`_`](./)
+File(s): [`X13-1_main.cc`](./X13-1_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-1_main.cc`
 
 ### \[2\]
 (D1) What does the following mean? What would it be good for?
