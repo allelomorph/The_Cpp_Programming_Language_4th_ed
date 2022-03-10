@@ -21,12 +21,13 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-1_main.cc`
 using riffi = int (&) (int, int);
 ```
 \
-File(s): [`_`](./)
+File(s): [`X13-2.txt`](./X13-2.txt)
 
 ### \[3\]
 (D1.5) Write a program like "Hello, world!" that takes a name as a command-line argument and writes "Hello, *name* !". Modify this program to take any number of names as arguments and to say hello to each.\
 \
-File(s): [`_`](./)
+File(s): [`X13-3_main.cc`](./X13-3_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-3_main.cc`
 
 ### \[4\]
 (D1.5) Write a program that reads an arbitrary number (possibly limited to some maximum number) of files whose names are given as command-line arguments and writes them one after another on `cout`. Because this program concatenates its arguments to produce its output, you might call it `cat`.\
@@ -46,7 +47,8 @@ File(s): [`_`](./)
 ### \[7\]
 (D2) Implement `ssort()` (§12.5) using a more efficient sorting algorithm. Hint: `sort()` and `qsort()`.\
 \
-File(s): [`_`](./)
+File(s): [`X13-7_main.cc`](./X13-7_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-7_main.cc`
 
 ### \[8\]
 (D2.5) Consider:
