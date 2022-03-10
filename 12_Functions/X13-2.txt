@@ -1,0 +1,3 @@
+`using riffi = int (&) (int, int);`
+
+This is a "using declaration," an idiomatic C++ equivalent to a C typedef. Given that riffi is assigned to a function pointer type, it will likely be used to simplify any function declarations or definitions that return this type of function pointer or take it as a parameter. See F*_verbose versus F*_simple functions in X13-1_main.cc for examples.
