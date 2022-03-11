@@ -81,10 +81,10 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[12\]
-(D2) Without using copy and paste, implement and test TEA (the Tiny Encryption Algorithm). D.J. Wheeler and R.M. Needham: *TEA, a tiny encryption algorithm*. Lecture Notes in Computer Science 1008: 363366. http://143.53.36.235:8080/tea.htm.
+(D2) Without using copy and paste, implement and test TEA (the Tiny Encryption Algorithm). D.J. Wheeler and R.M. Needham: *TEA, a tiny encryption algorithm*. Lecture Notes in Computer Science 1008: 363366. http://143.53.36.235:8080/tea.htm.\
 \
-\
-File(s): [`_`](./)
+File(s): [`X13-12_main.cc`](./X13-12_main.cc) [`UniformRandIntGen.hh`](../utils/UniformRandIntGen.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-12_main.cc -I../utils`
 
 ### \[13\]
 (D1) How would you choose names for pointer to function types defined using a type alias?\
