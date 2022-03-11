@@ -121,6 +121,9 @@ void TestAccumulators(std::array<ElementType, Size> &arr,
             auto end {std::chrono::high_resolution_clock::now()};
             trials.push_back((end - start).count());
         }
+        // Note: for C++17 and higher, std::reduce is recommended over
+        //   std::accumulate in a case like this when finding an average, see:
+        //   - https://stackoverflow.com/a/28574413
         std::cout << std::setw(32) << pair.first <<
             " output: " << sum <<
             " calculated in an average of: " << std::setw(5) <<
