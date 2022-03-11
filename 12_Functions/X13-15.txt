@@ -1,0 +1,16 @@
+// #define PI = 3.141593;
+// No assignment operator is needed:
+#define PI 3.141593;
+// However, it would be much better to use a constexpr to observe scope and be
+//   useful to other constexpr
+
+// #define MAX(a,b) a>b?a:b
+// Function-type macros can have side effects, and cause syntax errors. Rigorous
+//   use of parentheses can help prevent double evaluation, but there still can
+//   be other side effects.
+// #define MAX(a,b) ( ((a) > (b)) ? (a) : (b) )
+
+// #define fac(a) (a)*fac((a)−1)
+// Recursive macros seem to be generally prohibited by the C and C++ standards,
+//   and in many cases will only expand once, not recursively, see:
+//   - https://stackoverflow.com/a/12447739
