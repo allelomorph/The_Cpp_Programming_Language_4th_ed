@@ -63,7 +63,7 @@ static int LQSortPartition(
 }
 
 
-static void LomutoQuickSort (
+static void LomutoQuickSort(
     const std::vector<void *> &vp_vec, const std::size_t sz,
     int (*compar)(const void *, const void *),
     const int lo_i, const int hi_i) {
@@ -122,7 +122,7 @@ int VP_strcmp(const void *a, const void *b) {
 }
 
 
-}  //namespace X13_7
+}  // namespace X13_7
 
 
 int main() {

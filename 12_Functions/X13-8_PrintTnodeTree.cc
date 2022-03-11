@@ -56,8 +56,7 @@ static size_t TnodeTreeHeight(const Tnode *tree) {
 }
 
 
-void PrintTnodeTree(const Tnode *tree)
-{
+void PrintTnodeTree(const Tnode *tree) {
     if (!tree)
         return;
     constexpr int dflt_line_width {300};
