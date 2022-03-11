@@ -62,7 +62,8 @@ struct Tnode {
 ```
 Write a function for entering new words into a tree of `Tnode`s. Write a function to write out a tree of `Tnode`s. Write a function to write out a tree of `Tnode`s with the words in alphabetical order. Modify `Tnode` so that it stores (only) a pointer to an arbitrarily long word stored as an array of characters on free store using new. Modify the functions to use the new definition of `Tnode`.\
 \
-File(s): [`_`](./)
+File(s): [`X13-8_main.cc`](./X13-8_main.cc) [`X13-8_PrintTnodeTree.cc`](./X13-8_PrintTnodeTree.cc) [`X13-8_PrintTnodeTree.hh`](./X13-8_PrintTnodeTree.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-8_main.cc X13-8_PrintTnodeTree.cc`
 
 ### \[9\]
 (D2.5) Write a function to invert a two-dimensional array. Hint: §7.4.2.\
