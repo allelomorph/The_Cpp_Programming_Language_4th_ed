@@ -13,7 +13,7 @@ template<class IntType = int>
 class UniformRandIntGen {
 public:
     UniformRandIntGen(IntType low, IntType high) :rng{rd()}, dist{low, high} { }
-    int operator()() { return dist(rng); }
+    IntType operator()() { return dist(rng); }
 private:
     // The default_random_engine (minstd_rand0 or
     //   std::linear_congruential_engine<std::uint_fast32_t, 16807, 0,
