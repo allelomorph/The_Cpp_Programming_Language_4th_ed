@@ -35,7 +35,10 @@ namespace X13_7 {
 
 
 static void SwapBufferContent(void *a, void *b, const std::size_t sz) {
-    char *buf1 {static_cast<char *>(a)};  // for single-byte pointer arithmetic
+    // Cast to char pointer for single-byte pointer arithmetic, cannot
+    //   directly compute void pointers, see:
+    //   - https://stackoverflow.com/a/3524270
+    char *buf1 {static_cast<char *>(a)};
     char *buf2 {static_cast<char *>(b)};
     for (std::size_t i {0}; i < sz; ++i) {
         char temp {buf1[i]};
