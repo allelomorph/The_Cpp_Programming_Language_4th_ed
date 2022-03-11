@@ -1,3 +1,8 @@
+// Printing function names from inside function, see:
+//   - https://stackoverflow.com/a/17528983
+// Related discussion of getting function name from function pointer, see:
+//   - https://stackoverflow.com/q/351134
+
 #ifndef __GNUG__
 #error "Use of __func__ to get function name requires compilation with gcc/g++."
 #endif
