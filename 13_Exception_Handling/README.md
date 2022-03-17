@@ -22,7 +22,8 @@ File(s): [`_`](./)
 ### \[3\]
 (D3) Define a class `Int` that acts exactly like the built-in type `int`, except that it throws exceptions rather than overflowing or underflowing.\
 \
-File(s): [`_`](./)
+File(s): [`X14-3_main.cc`](./X14-3_main.cc) [`X14-3_Int.cc`](./X14-3_Int.cc) [`X14-3_Int.hh`](./X14-3_Int.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-3_main.cc X14-3_Int.cc`
 
 ### \[4\]
 (D2.5) Take the basic operations for opening, closing, reading, and writing from the C interface to your operating system and provide equivalent C++ functions that call the C functions but throw exceptions in case of errors.\
