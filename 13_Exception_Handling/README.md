@@ -53,7 +53,8 @@ int main() { /* ... */ }
 ```
 Change it so that it catches all exceptions thrown from the ..., turns them into error messages, and `abort()`s.\
 \
-File(s): [`_`](./)
+File(s): [`X14-8_main.cc`](./X14-8_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-8_main.cc`
 
 ### \[9\]
 (D2) Write a class or template suitable for implementing callbacks.\
