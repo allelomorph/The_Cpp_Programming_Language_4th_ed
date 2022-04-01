@@ -28,7 +28,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-3_main.cc X14-3_In
 ### \[4\]
 (D2.5) Take the basic operations for opening, closing, reading, and writing from the C interface to your operating system and provide equivalent C++ functions that call the C functions but throw exceptions in case of errors.\
 \
-File(s): [`_`](./)
+File(s): [`X14-4_main.cc`](./X14-4_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-4_main.cc`
 
 ### \[5\]
 (D2.5) Write a complete `Vector` template with `Range` and `Size` exceptions.\
@@ -60,8 +61,7 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[10\]
-(D2) Write a program consisting of functions calling each other to a calling depth of 10. Give each function an argument that determines at which level an exception is thrown. Have
-`main()` catch these exceptions and print out which exception is caught. Don’t forget the case in which an exception is caught in the function that throws it.\
+(D2) Write a program consisting of functions calling each other to a calling depth of 10. Give each function an argument that determines at which level an exception is thrown. Have `main()` catch these exceptions and print out which exception is caught. Don’t forget the case in which an exception is caught in the function that throws it.\
 \
 File(s): [`_`](./)
 
