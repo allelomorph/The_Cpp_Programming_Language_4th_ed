@@ -64,17 +64,20 @@ File(s): [`_`](./)
 ### \[10\]
 (D2) Write a program consisting of functions calling each other to a calling depth of 10. Give each function an argument that determines at which level an exception is thrown. Have `main()` catch these exceptions and print out which exception is caught. Don’t forget the case in which an exception is caught in the function that throws it.\
 \
-File(s): [`_`](./)
+File(s): [`X14-10_main.cc`](./X14-10_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-10_main.cc`
 
 ### \[11\]
 (D2) Modify the program from §X.14[10] to measure if there is a difference in the cost of catching exceptions depending on where in the function call stack the exception is thrown. Add a string object to each function and measure again.\
 \
-File(s): [`_`](./)
+File(s): [`X14-11_main.cc`](./X14-11_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-11_main.cc`
 
 ### \[12\]
 (D2) Write a function that either returns a value or that throws that value based on an argument. Measure the difference in run-time between the two ways.\
 \
-File(s): [`_`](./)
+File(s): [`X14-12_main.cc`](./X14-12_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-12_main.cc`
 
 ### \[13\]
 (D2) Modify the calculator version from §X.15[2] to use exceptions. Keep a record of the mistakes you make. Suggest ways of avoiding such mistakes in the future.\
