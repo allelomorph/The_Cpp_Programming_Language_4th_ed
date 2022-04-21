@@ -68,7 +68,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-8_main.cc X13-8_Pr
 ### \[9\]
 (D2.5) Write a function to invert a two-dimensional array. Hint: §7.4.2.\
 \
-File(s): [`_`](./)
+File(s): [`X13-9_main.cc`](./X13-9_main.cc)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X13-9_main.cc`
 
 ### \[10\]
 (D2) Write an encryption program that reads from `cin` and writes the encoded characters to `cout`. You might use this simple encryption scheme: the encrypted form of a character `c` is `cˆkey[i]`, where `key` is a string passed as a command-line argument. The program uses the characters in `key` in a cyclic manner until all the input has been read. Re-encrypting encoded text with the same key produces the original text. If no key (or a null string) is passed, then no encryption is done.\
@@ -76,7 +77,7 @@ File(s): [`_`](./)
 File(s): [`_`](./)
 
 ### \[11\]
-(D3.5) Write a program to help decipher messages encrypted with the method described in §X.13\[9\] without knowing the key. Hint: See David Kahn: *The Codebreakers*, Macmillan, 1967, New York, pp. 207-213.\
+(D3.5) Write a program to help decipher messages encrypted with the method described in §X.13\[10\] without knowing the key. Hint: See David Kahn: *The Codebreakers*, Macmillan, 1967, New York, pp. 207-213.\
 \
 File(s): [`_`](./)
 
