@@ -87,7 +87,8 @@ File(s): [`_`](./)
 ### \[14\]
 (D2.5) Write `plus()`, `minus()`, `multiply()`, and `divide()` functions that check for possible overflow and underflow and that throw exceptions if such errors happen.\
 \
-File(s): [`_`](./)
+File(s): [`X14-14_main.cc`](./X14-14_main.cc) [`X14-14_arithmetic_ops.hh`](./X14-14_arithmetic_ops.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-12_main.cc`
 
 ### \[15\]
 (D2) Modify the calculator to use the functions from §X.14\[14\].\
