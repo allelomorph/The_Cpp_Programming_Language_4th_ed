@@ -30,7 +30,14 @@
 
 
 template <typename T>
-const char *TypeName(T &o) {
+const char *TypeName(const T &lvr) {
+    return abi::__cxa_demangle(typeid(lvr).name(), nullptr, nullptr, nullptr);
+}
+
+
+template <typename T>
+const char *TypeName(const T &&rvr) {
+    auto o {rvr};
     return abi::__cxa_demangle(typeid(o).name(), nullptr, nullptr, nullptr);
 }
 
