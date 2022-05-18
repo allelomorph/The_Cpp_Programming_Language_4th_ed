@@ -34,7 +34,8 @@ Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-4_main.cc`
 ### \[5\]
 (D2.5) Write a complete `Vector` template with `Range` and `Size` exceptions.\
 \
-File(s): [`_`](./)
+File(s): [`X14-5_main.cc`](./X14-5_main.cc) [`X14-5_Vector.hh`](./X14-5_Vector.hh)\
+Compiled: `g++ -Wall -Werror -Wextra -pedantic -std=c++11 X14-5_main.cc`
 
 ### \[6\]
 (D1) Write a loop that computes the sum of a `Vector` as defined in §X.14\[5\] without examining the size of the `Vector`. Why is this a bad idea?\
