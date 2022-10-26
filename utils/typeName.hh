@@ -8,6 +8,12 @@
 //   instead, see:
 //   - https://bytes.com/topic/c/answers/161232-howto-make-template-class-part-static-library
 
+#if __cplusplus < 201103L
+
+#error "typeName requires at least C++11 to use"
+
+#elif __cplusplus < 201703L
+
 // typeid(obj).name() return is implementation-dependent; with g++ the names
 //   are "mangled" to ensure unique identification of overloaded functions.
 //   Object names can be demangled, also in an implementation-specific manner.
@@ -18,12 +24,6 @@
 //   - https://gcc.gnu.org/onlinedocs/libstdc++/libstdc++-html-USERS-4.3/a01696.html
 //   - https://en.wikipedia.org/wiki/Name_mangling
 //   - https://www.cplusplus.com/forum/beginner/175177/#msg866884
-
-#if __cplusplus < 201103L
-
-#error "typeName requires at least C++11 to use"
-
-#elif __cplusplus < 201703L
 
 // C++11 solution adapted from:
 //   - https://stackoverflow.com/a/20170989
@@ -67,9 +67,6 @@ std::string typeName() {
 
 // __GNUC__ must be 8 and above for __PRETTY_FUNCTION__ return to be constexpr
 
-#include <algorithm>
-#include <array>
-#include <cstddef>
 #include <string_view>
 
 namespace impl {
@@ -100,26 +97,19 @@ static_assert(type_name_format.prefix_sz != std::string_view::npos,
               "Unable to determine the type name format on this compiler.");
 
 template <typename T>
-static constexpr auto type_name_storage {
+static constexpr std::string_view type_name_storage {
     []() constexpr {
-        constexpr auto raw_type_name { rawTypeName<T>() };
-        std::array<char,
-                   raw_type_name.size() - type_name_format.total_extra_chars + 1> ret {};
-        // std::copy and std::copy_n are not constexpr, need to copy manually
-        auto rtn_it { raw_type_name.begin() + type_name_format.prefix_sz };
-        for (auto &c : ret) {
-            c = *rtn_it;
-            ++rtn_it;
-        }
-        return ret;
+        constexpr std::string_view raw_type_name { rawTypeName<T>() };
+        return std::string_view {
+            raw_type_name.data() + type_name_format.prefix_sz,
+                raw_type_name.size() - type_name_format.total_extra_chars };
     }() };
 
 }  // namespace impl
 
 template <typename T>
 [[nodiscard]] constexpr std::string_view typeName() {
-    return { impl::type_name_storage<T>.data(),
-             impl::type_name_storage<T>.size() - 1 };
+    return impl::type_name_storage<T>;
 }
 
 template <typename T>
